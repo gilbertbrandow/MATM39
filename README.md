@@ -41,26 +41,26 @@
 
 ## Week 4 (30/1)
 
-- [ ] Lecture 4
+- [x] Lecture 4
 - [/] Read Chapter 2.1
   - [x] Exercises 2.1: 2
   - [x] Exercises 2.1: 3
   - [x] Exercises 2.1: 5
-- [ ] Read Chapter 2.2
-  - [ ] Exercises 2.2: 1
-  - [ ] Exercises 2.2: 3
-  - [ ] Exercises 2.2: 6
+- [x] Read Chapter 2.2
+  - [x] Exercises 2.2: 1
+  - [x] Exercises 2.2: 3
+  - [/] Exercises 2.2: 6
 
 ## Week 5 (3/2)
 
-- [ ] Lecture 5
-- [ ] Read Chapter 2.3
-  - [ ] Exercises 2.3: 1
-  - [ ] Exercises 2.3: 2
-  - [ ] Exercises 2.3: 3
-  - [ ] Exercises 2.3: 5
-- [ ] Read Chapter 2.4.1
-  - [ ] Additional exercise: 1
+- [/] Lecture 5
+- [/] Read Chapter 2.3
+  - [x] Exercises 2.3: 1
+  - [x] Exercises 2.3: 2
+  - [x] Exercises 2.3: 3
+  - [x] Exercises 2.3: 5
+- [/] Read Chapter 2.4.1
+  - [x] Additional exercise: 1
 
 ## Week 6 (6/2)
 
