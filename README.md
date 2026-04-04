@@ -20,32 +20,32 @@
 
 ## Week 2 (23/1)
 
-- [ ] Lecture 2
-- [ ] Read Statements 1.3.1–1.3.6
-  - [ ] Exercises 1.3: 1
-  - [ ] Exercises 1.3: 2
-  - [ ] Exercises 1.3: 3
-  - [ ] Exercises 1.3: 5
+- [x] Lecture 2
+- [x] Read Statements 1.3.1–1.3.6
+  - [x] Exercises 1.3: 1
+  - [x] Exercises 1.3: 2
+  - [x] Exercises 1.3: 3
+  - [ ] Exercises 1.3: 5 (optional)
   - [ ] Exercises 1.3: 7
-  - [ ] Exercises 1.3: 8
+  - [ ] Exercises 1.3: 8 (optional)
   - [ ] Exercises 1.4: 1
 
 ## Week 3 (27/1)
 
-- [ ] Lecture 3
-- [ ] Read Statements 1.3.7, 1.3.8
-- [ ] Read Chapter 1.4 except 10–11
-  - [ ] Exercises 1.4: 3
-  - [ ] Exercises 1.4: 4
-  - [ ] Exercises 1.4: 5
+- [x] Lecture 3
+- [x] Read Statements 1.3.7, 1.3.8
+- [x] Read Chapter 1.4 except 10–11
+  - [x] Exercises 1.4: 3
+  - [x] Exercises 1.4: 4
+  - [x] Exercises 1.4: 5
 
 ## Week 4 (30/1)
 
 - [ ] Lecture 4
-- [ ] Read Chapter 2.1
-  - [ ] Exercises 2.1: 2
-  - [ ] Exercises 2.1: 3
-  - [ ] Exercises 2.1: 5
+- [/] Read Chapter 2.1
+  - [x] Exercises 2.1: 2
+  - [x] Exercises 2.1: 3
+  - [x] Exercises 2.1: 5
 - [ ] Read Chapter 2.2
   - [ ] Exercises 2.2: 1
   - [ ] Exercises 2.2: 3
