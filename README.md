@@ -65,11 +65,11 @@
 ## Week 6 (6/2)
 
 - [ ] Lecture 6
-- [ ] Read Chapter 2.4
-  - [ ] Exercises 2.4: 1
-  - [ ] Exercises 2.4: 6
-  - [ ] Exercises 2.4: 7
-  - [ ] Exercises 2.4: 8
+- [/] Read Chapter 2.4
+  - [x] Exercises 2.4: 1
+  - [x] Exercises 2.4: 6
+  - [ ] Exercises 2.4: 7 (Optional)
+  - [ ] Exercises 2.4: 8 (Optional)
   - [ ] Exercises 2.4: 9
   - [ ] Exercises 2.4: 10
   - [ ] Exercises 2.4: 11
