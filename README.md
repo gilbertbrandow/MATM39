@@ -64,53 +64,53 @@
 
 ## Week 6 (6/2)
 
-- [ ] Lecture 6
+- [/] Lecture 6
 - [/] Read Chapter 2.4
   - [x] Exercises 2.4: 1
   - [x] Exercises 2.4: 6
   - [ ] Exercises 2.4: 7 (Optional)
   - [ ] Exercises 2.4: 8 (Optional)
   - [ ] Exercises 2.4: 9
-  - [ ] Exercises 2.4: 10
-  - [ ] Exercises 2.4: 11
+  - [x] Exercises 2.4: 10
+  - [x] Exercises 2.4: 11
   - [ ] Additional exercise: 1
 
 ## Week 7 (10/2)
 
-- [ ] Lecture 7
-- [ ] Read Chapter 2.5
-  - [ ] Exercises 2.5: 3
-  - [ ] Exercises 2.5: 4
-  - [ ] Exercises 2.5: 5
-  - [ ] Exercises 2.5: 6
+- [/] Lecture 7
+- [/] Read Chapter 2.5
+  - [x] Exercises 2.5: 3
+  - [x] Exercises 2.5: 4
+  - [x] Exercises 2.5: 5
+  - [x] Exercises 2.5: 6
   - [ ] Exercises 2.5: 7
   - [ ] Exercises 2.5: 8
-- [ ] Read Chapter 2.6
-  - [ ] Exercises 2.6: 2
-  - [ ] Exercises 2.6: 7
+- [/] Read Chapter 2.6
+  - [x] Exercises 2.6: 2
+  - [/] Exercises 2.6: 7
 
 ## Week 8 (13/2)
 
-- [ ] Lecture 8
-- [ ] Read Chapter 3.1
-  - [ ] Exercises 3.1: 1
-  - [ ] Exercises 3.1: 2
-  - [ ] Exercises 3.1: 3
-  - [ ] Exercises 3.1: 4
-  - [ ] Exercises 3.1: 5
-  - [ ] Exercises 3.1: 6
+- [/] Lecture 8
+- [/] Read Chapter 3.1
+  - [x] Exercises 3.1: 1
+  - [x] Exercises 3.1: 2
+  - [x] Exercises 3.1: 3
+  - [x] Exercises 3.1: 4
+  - [x] Exercises 3.1: 5
+  - [/] Exercises 3.1: 6
   - [ ] Additional exercise: 2
 
 ## Week 9 (17/2)
 
 - [ ] Lecture 9
-- [ ] Read Chapter 3.2
-  - [ ] Exercises 3.2: all
-- [ ] Read Chapter 3.3
-  - [ ] Exercises 3.3: 1
-  - [ ] Exercises 3.3: 2
-  - [ ] Exercises 3.3: 3
-  - [ ] Exercises 3.3: 4
+- [x] Read Chapter 3.2
+  - [ ] Exercises 3.2: (All optional)
+- [/] Read Chapter 3.3
+  - [x] Exercises 3.3: 1
+  - [/] Exercises 3.3: 2
+  - [x] Exercises 3.3: 3
+  - [x] Exercises 3.3: 4 (produce explicit example)
   - [ ] Exercises 3.3: 7
   - [ ] Exercises 3.3: 8
   - [ ] Exercises 3.3: 9
