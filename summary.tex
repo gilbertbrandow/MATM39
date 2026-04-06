@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{relsize}
+\usepackage{tikz-cd}
+\usepackage{mathrsfs}
+
+\title{Integration Theory}
+\author{Isak Blom \& Simon Gustafsson}
+\date{February 2026}
+
+\begin{document}
+\maketitle
+I mark the results not mentioned in lectures with '---'.
+\begin{enumerate}
+\section{Del I}
+    \item Definition of $\sigma$-algebra.
+    \item Definition of measure.
+    \item For $A_1 \subseteq A_2 \subseteq \cdots$ all in $\sigma$-algebra $\mathcal{F}$ with measure $\mu$ we have $\mu(\cup A_i) = \lim\mu(A_i)$.
+    \item For $A_1 \supseteq A_2 \supseteq \cdots$ all in $\sigma$-algebra $\mathcal{F}$ with measure $\mu$ we have $\mu(\cap A_i) = \lim\mu(A_i)$ if $\mu(A_i) < \infty$.
+    \item Definition of outer measure.
+    \item Definition of Lebesgue outer measure on $\mathbb{R}$.
+    \item Lebesgue outer measure is an outer measure.
+    \item Given an outer measure $\lambda^*$ the definition of a set being $\lambda^*$-measurable.
+    \item Theorem: Given an outer measure $\lambda^*$ we have that the set of $\lambda^*$-measurable sets forms a $\sigma$-algebra and the restriction of $\lambda^*$ to this set is a  measure.
+    \item ---Let $\lambda^*$ be an outer measure and subset $B$ such that $\lambda^*(B) = 0$. Then $B$ is measurable.
+    \item Every Borel subset of $\mathbb{R}$ is Lebesgue measurable. 
+    \item ---If $\mu$ is a finite measure on $(\mathbb{R},\mathscr{B}(\mathbb{R}))$ and $F(x) := \mu((-\infty,x))$ then $F$ is non-decreasing, right-continuous and approaches $0$ as $x$ goes to $-\infty$.
+    \item ---A function satisfying the properties above induces a measure uniquely.
+    \item ---If $A\subseteq \mathbb{R}^d$ is Lebesgue measurable then: \begin{align*}
+        \lambda(A) &= \inf\{\lambda(U)\mid U \text{ open}\wedge A\subseteq U\}\\
+        \lambda(A) &= \sup\{\lambda(K)\mid K \text{ compact}\wedge K\subseteq A\}
+    \end{align*}
+    \item ---Each open subset of $\mathbb{R}^d$ is the disjoint union of countably many "cubes" of the form $\{(x_1,\ldots,x_d) \mid j_i2^{-k}\leq x < (j_i+1)2^{-k}\}$.
+    \item ---The Lebesgue measure in $(\mathbb{R}^d,\mathscr{B}(\mathbb{R}^d))$ is the only measure here that assigns to each cube-interval it's volume.
+    \item $\lambda(B) = \lambda(B+x)$ (where $B+x$ is $B$ translated by $x$ and things are in $\mathbb{R}^d$).
+    \item ---If a measure on $(\mathbb{R}^d,\mathscr{B}(\mathbb{R}^d))$ is bounded on bounded sets and translation invariant then it is a linear scaling of the Lebegue measure.
+    \item The cantor set is compact, has same cardinality as $\mathbb{R}$ but Lebesgue measure zero.
+    \item Theorem: There is a subset of $\mathbb{R}$ that is not Lebesgue measurable.
+    \section{Del II}
+    From now on we mean by $\hat{\mathbb{R}}$ the set $[-\infty,\infty]$ and by $\hat{\mathbb{R}}_+$ the set $[0,\infty]$
+    \item Let $X$ space with $\sigma$-algebra $\mathscr{A}$ and measure $\mu$. Let further for an element $A\in \mathscr{A}$ function $f: A \to \hat{\mathbb{R}{}}$. Then TFAE:\begin{align*}
+        \textbf{a) } t\in \mathbb{R} \implies \{x\mid f(x)\leq t\}\in \mathscr{A}\\
+        \textbf{b) } t\in \mathbb{R} \implies \{x\mid f(x)< t\}\in \mathscr{A}\\
+        \textbf{c) } t\in \mathbb{R} \implies \{x\mid f(x)\geq t\}\in \mathscr{A}\\
+        \textbf{d) } t\in \mathbb{R} \implies \{x\mid f(x)> t\}\in \mathscr{A}
+    \end{align*}
+    If $f$ satisfies these properties it is called $\mathscr{A}$-measurable.
+    \item ---If we have functions $f$ and $g$ as above and $\mathscr{A}$-measurable then the sets $\{x\in A \mid f(x)<g(x)\}, \{x\in A \mid f(x)\leq g(x)\}$ and $\{x\in A \mid f(x)=g(x)\}$ all lie in $\mathscr{A}$.
+    \item The set $S$ of $\mathcal{A}$-measurable functions from $A$ to $[-\infty,\infty]$  is closed under addition, multiplication, scalar multiplication, countable/finite infinum/supremum and kinda closed under limits and division (with kinda closed it is meant that, we need to restrict $X$ to where the quotient/limit is defined).
+    \item ---Each element in $S$ that is never negative is a limit point (These conditions are a pain to write with limits, there has to be some topological framing of this).
+    \item ---Like actually wtf is this chapter. "btw this is ture" followed by "btw this is true" repeatedly.
+    \item Let $X$ space with $\sigma$-algebra $\mathcal{A}$. Let further for an element $A\in \mathcal{A}$ function $f: A \to [-\infty,\infty]$. Then TFAE:\begin{align*}
+        &\textbf{a) } f \text{ is $\mathcal{A}$-measurable},\\
+        &\textbf{b) } \text{for $U$ open }f^{-1}(U)\in\mathcal{A},\\
+        &\textbf{c) } \text{for $C$ closed }f^{-1}(C)\in\mathcal{A},\\
+        &\textbf{d) } \text{for $B$ Borel }f^{-1}(B)\in\mathcal{A}.
+    \end{align*}
+    \item There is a Lebesgue measurable subset of $\mathbb{R}$ that is not a Borel set.
+    \item The subset of $S$ consisting of simple measurable functions is dense in $S$.
+    \item ---Our set $S$ above is closed under change almost nowhere if $\mu$ is complete. That is, if $f,g$ equal almost everywhere then measurability of one is equivalent to measurability of the other.
+    \item ---A function $f$ is measurable with respect to the completion of the $\sigma$-algebra if and only if there are two functions $f_1$ and $f_2$ measurable with respect to our original $\sigma$-algebra such that $f_1\leq f \leq f_2$ everywhere and $f_1=f=f_2$ almost everywhere.
+    \item Definition of integral of nonnegative ($\mathbb{R}_+$-valued) simple measurable function and show that this i well defined.
+    \item ---That for these nonnegative simple measurable functions we have:\\
+    \textbf{a)} $\int \alpha fd\mu = \alpha\int fd\mu$ for $\alpha \geq 0$,\\
+    \textbf{b)} $\int (f+g)d\mu = \int fd\mu +\int gd\mu$,\\
+    \textbf{c)} If $f\geq g$, $\int fd\mu \geq \int gd\mu$.
+    \item ---If we have a nonnegative simple measurable function $f$ with non-decreasing, series of simple nonnegative measurable functions $f_n$ with point-wise limit $f$ we then have $\int f d\mu = \lim \int f_n d\mu$.
+    \item Definition of integral of nonnegative measurable functions: $\int fd\mu = \sup\{\int g d\mu \mid g\leq f \text{ with $g$ simple}\}$.
+    \item -(sums after next point)- Point $32$ but with $f$  $\hat{\mathbb{R}}_+$-valued and not necessarily simple.
+    \item Point $31$ but with $f, g$  $\hat{\mathbb{R}}_+$-valued and not necessarily simple.
+    \item Definition of integral of a $\hat{\mathbb{R}}$-valued measurable function. Definition of when an integral exists and integrability. Also definition of integral of $f$ over $A$.
+    \item The set of real valued integrable functions $\mathscr{L}^1$ is a vector space over $\mathbb{R}$ and the integral is a linear functional on this space. (Yay! finally something nice :)) 
+    \item Let $f$ be a $\hat{\mathbb{R}}$-valued measurable function. Then $f$ is integrable if and only if $|f|$ is integrable. If these are integrable we further have that $|\int fd\mu| \leq \int |f|d\mu$.
+    \item If $f$ and $g$ are $\hat{\mathbb{R}}$-valued measurable functions that agree almost everywhere then integrability of one of them is equivalent to integrability of the other and in case they are integrable $\int fd\mu = \int gd\mu$.
+    \item ---There is a very weird proposition here with 5 wired corollaries.
+    \item The Monotone Convergence Theorem: Suppose that we have $\hat{\mathbb{R}}_+$-valued measurable functions $f$ and $f_n$ such that $f_{n+1}\geq f_n$ and $f = \lim f_n$ almost everywhere. Then we have: \[\int fd\mu = \lim \int f_n d\mu\]. (This theorem is phrased in a wierd way I think. Is it not simply saying that we can move the limit inside the integral when the sequence is monotone?)
+    \item Fatou's Lemma: Let $f_n$ be a sequence of $\hat{\mathbb{R}}_+$-valued measurable functions. Then \[\int \lim f_nd\mu \leq \lim \int f_nd\mu\].
+    \item Dominated Convergence Theorem: Let $g$ be a $\hat{\mathbb{R}}_+$-valued integrable function and $f_n$ a sequence of $\hat{\mathbb{R}}$-valued measurable functions with defined point-wise limit. If $|f_n|\leq g$ almost everywhere for all $n$ then the $f_n$'s are all integrable and \[\lim \int f_n d\mu = \int \lim f_n d\mu.\]
+    \item Theorem: Let $f$ be a bounded real valued function on $[a,b]$. Then $f$ is Riemann integrable if and only if it is continuous almost everywhere. If it is Riemann integrable then it is also Lebesgue integrable and the two integrals coincide.
+    \item ---A function is Riemann integrable if and only if the Riemann sum has a limit as the mesh size goes to zero. (The book defines Riemann integrability as Darboux integrability and now we prove that it is the same as Riemann integrability, again, for some reason).
+    \item ---General definition of measurable function. Basically taking pre-image of something in the co-domain's $\sigma$-algebra should be in the domain's $\sigma$-algebra.
+    \item ---Function measurability is preserved by composition.
+    \item ---It is enough that the pre-images of a basis for the co-domain's $\sigma$-algebra lie in the domain's $\sigma$-agebra for the function to be measurable.
+    \item ---Our old notion of measurability where $f: X \to \hat{\mathbb{R}}$, $X$ with $\sigma$-algebra $\mathscr{A}$, is equivalent to our new notion where we equip $\hat{\mathbb{R}}$ with the $\sigma$-algebra $\mathscr{B}(\hat{\mathbb{R}})$ defined as simply considering the normal Borel $\sigma$-algebra and then ignoring anything infinity.
+    \item The complex valued measurable function $f$ (where $\mathbb{C}$ has the Borel $\sigma$-algebra) is integrable if and only if $|f|$ is integrable.
+    \item Let $(X,\mathscr{A},\mu)$ be a measure space and $(Y,\mathscr{B})$ a measurable space. Let $f:X \to Y$ and $g:Y \to \hat{\mathbb{R}}$ be measurable. Then $g$ is $\mu f^{-1}$-integrable if and only if $g\circ f$ is $\mu$-integrable. In case the are integrable we have \[\int_Ygd(\mu f^{-1}) = \int_X (g\circ f) d\mu.\]
+    \section{Del III}
+    \item Definition of converging in measure.
+    \item ---If $\mu$ is finite then converging almost everywhere implies converging in measure.
+    \item If a sequence $f_1,f_2,\ldots$ converges to $f$ in measure then there is a subsequence that converges to $f$ almost everywhere
+    \item Egoroff's Theorem: Let $f_n$ be a sequence of measurable $\mathbb{R}$-valued functions. If $\mu$ is finite and $f_n$ converges to $f$ almost everywhere, then for each $\varepsilon>0$ there exists a subset $B\in \mathscr{A}$ such that $\mu(B^c)<\varepsilon$ and $f_n$ converges uniformly on $B$.
+    \item The form of convergence described in Egoroff's theorem is called almost uniform convergence. So Egoroff's theorem says that for a finite measure converging almost everywhere and converging almost uniformly is equivalent.
+    \item Let $f_1,f_2,\dots$ and $f$ belong to $\mathscr{L^1}(X,\mu,\mathscr{A},\mathbb{R})$ then if $f_1,f_2,\dots$ converges to $f$ in mean then it also converges to $f$ in measure.
+    \item Let $f_1,f_2,\dots$ and $f$ belong to $\mathscr{L^1}(X,\mu,\mathscr{A},\mathbb{R})$. If $f_1,f_2,\dots$ converge to $f$ almost everywhere or in measure and further there exists a $\hat{\mathbb{R}}_+$-valued integrable function $g$ such that $|f|,|f_n|\leq g$ hold almost everywhere then $f_1,f_2,\dots$ converge to $f$ in mean.
+    \item Definition of separable: A metric space is separable if it has a countable dense subset.
+    \item ---Let $V$ be a normed vector space, then it is complete if an only if every sequence whose sum converges absolutely also converges.
+    \item Definition of $\mathscr{L}^p(X,\mu,\mathscr{A},\mathbb{R})$: It is the set of $\mathbb{R}$-valued functions $f$ for which $|f|^p$ is integrable. In the case $p=\infty$ $\mathscr{L}^p(X,\mu,\mathscr{A},\mathbb{R})$ is the set of bounded $\mathbb{R}$-valued functions.
+    \item Let $p: 1<p<\infty$ and $q: \frac{1}{p}+\frac{1}{q}=1$. Then for any nonnegative $x,y$ we have $xy\leq \frac{x^p}{p}+\frac{y^q}{q}$.
+    \item Hölder: Let $p: 1\leq p\leq\infty$ and $q: \frac{1}{p}+\frac{1}{q}=1$. If $f \in \mathscr{L}^p(X,\mathscr{A},\mu)$ and $g\in \mathscr{L^q}(X,\mathscr{A},\mu)$ then $fg \in \mathscr{L}^1(X,\mathscr{A},\mu)$ and $||fg||_1\leq ||f||_p||q||_q$.
+    \item Minkowski: If $f,g\in \mathscr{L}^p(X,\mathscr{A},\mu)$ then $f+g\in \mathscr{L}^p(X,\mathscr{A},\mu)$ and $||f+g||_p \leq ||f||_p+||g||_p$.
+    \item Definition of $L^p(X,\mathscr{A,\mu})$: It is the quotient $\frac{\mathscr{L}^p(X,\mathscr{A,\mu})}{\mathscr{N}^p(X,\mathscr{A,\mu})}$, where  $\mathscr{N}^p(X,\mathscr{A,\mu})$ is the subspace of functions with seminorm zero.
+    \item $L^p(X,\mathscr{A},\mu)$ is complete under the norm $||\cdot||_p$.
+    \item The simple functions in $\mathscr{L}^p(X,\mathscr{A},\mu)$ form a dense subspace, and so, determine a dense subspace of $L^p(X,\mathscr{A},\mu)$.
+    \item Let $1\leq p <\infty$. The step-functions on $[a,b]$ are dense in $L^p(X,\mathscr{A},\mu,[a,b])$.
+    \item Let $1\leq p <\infty$. The continuous functions on $[a,b]$ are dense in $L^p(X,\mathscr{A},\mu,[a,b])$.
+    \item ---Lemma: If $(X,\mathscr{A},\mu)$ is a finite measure space and $\mathscr{A}_0$ is an algebra of subsets of $X$ that generate $\mathscr{A}$ then $\mathscr{A}_0$ is dense in the sense that for all $\varepsilon>0$ and $A\in \mathscr{A}$ there is an $A_0\in \mathscr{A}_0$ such that $\mu(A\Delta A_0) <\varepsilon$.
+    \item ---Lemma: $\mathscr{A}_0$ and $\mathscr{A}$ as in the previous lemma except our measure space is not necessarily finite and furthermore $X$ is the union of a sequence in $\mathscr{A}_0$ where each element of the sequence have finite measure. Under these conditions we again have that $\mathscr{A}_0$ is dense in $\mathscr{A}$
+    \item Proposition: Let $p:1\leq p<\infty$ If $(X,\mathscr{A,\mu})$ is a  measure space with $\mu$ $\sigma$-finite and $\mathscr{A}$ countably generated then $L^p(X,\mathscr{A},\mu)$ is separable. (It says this proposition is less important and so I suspect that is also true for the two lemmas leading up to it (the previous two)).
+    \section{Del IV}
+    \item Definition of product of $\sigma$-algebras. ($\mathscr{A}\times\mathscr{B}$).
+    \item Lemma: Let $(X,\mathscr{A})$ and $(Y,\mathscr{B})$ be measurable spaces, then;\\
+    \textbf{a) } If $E\in \mathscr{A}\times\mathscr{B}$ then $E_x\in \mathscr{B}$ and $E^y\in \mathscr{A}$.\\
+    \textbf{b) } If $f$ is a $\hat{\mathbb{R}}$-valued $\mathscr{A}\times\mathscr{B}$ measurable function then it's sections are also measurable.
+    \item Let $(X,\mathscr{A},\mu)$ and $(Y,\mathscr{B},\nu)$ be $\sigma$-finite measure spaces. Then if $E\in \mathscr{A}\times\mathscr{B}$ the function $x\mapsto \nu(E_x)$ is $\mathscr{A}$-measurable.(This proof requires section $1.6$, wuä).
+    \item Theorem: Let $(X,\mathscr{A},\mu)$ and $(Y,\mathscr{B},\nu)$ be $\sigma$-finite measure spaces. Then there exists a unique measure, call it $\mu\times\nu$ on $\mathscr{A}\times\mathscr{B}$ such that $\mu\times\nu(A\times B) = \mu(A)\nu(B)$ holds for each $A\in \mathscr{A}$ and $B\in \mathscr{B}$. Furthermore we have that for $E\in \mathscr{A}\times\mathscr{B}$, \[\mu\times\nu(E) = \int_X\nu(E_x)d\mu=\int_Y\mu(E^y)d\nu\]
+    \item Tonelli's Theorem: Let $(X,\mathscr{A},\mu)$ and $(Y,\mathscr{B},\nu)$ be $\sigma$-finite measure spaces. If $f: X\times Y \to \hat{\mathbb{R}}_+$ is measurable then the function $x \mapsto \int_Yf_xd\nu$ is measurable and \[\int_{X\times Y}fd(\mu\times \nu) = \int_X\left( \int_Yf_xd\nu\right)d\mu.\]
+    \item Fubini's Theorem: Let $(X,\mathscr{A},\mu)$ and $(Y,\mathscr{B},\nu)$ be $\sigma$-finite measure spaces. Let $f: X\times Y \to \hat{\mathbb{R}}$ be measurable and integrable. Then,\\
+    \textbf{a) } for $\mu$-almost every $x\in X$ the section $f_x$ is $\nu$-integrable.\\
+    \textbf{b) } the function $I_f$ defined by \[I_f(x) = \begin{cases}
+        \int_Yf_xd\nu\quad &\text{if $f_x$ is $\nu$-integrable}\\
+        0\quad &\text{otherwise}
+    \end{cases}\] belongs to $\mathscr{L}^1(X,\mathscr{A},\mu,\mathbb{R})$.\\
+    \textbf{c) } \[\int_{X\times Y}fd(\mu\times \nu) = \int _X I_fd\mu\].
+    \item Let $F,G:\mathbb{R\to \mathbb{R}}$ be bounded nondecreasing right-continuous functions that vanish at $-\infty$. Let $\mu_F$ and $\mu_G$ be the measures induced by $G$ and $F$ and let $a,b\in \mathbb{R}: a<b$. Then \[\int_{[a,b]}\frac{F(x-)}{something}\]. What is $F(x-)$?\\
+    
+\end{enumerate}
+
+\begin{enumerate}
+    \section*{Del V}
+    \item Let $V_1$ and $V_2$ be a normed vector spaces and $T\in \text{Vec}(V_1,V_2)$ then $T$ is bounded if and only if it is continuous (topology induced by the norm on $V$ and the standard topology on $\mathbb{R}$).
+    \item Let $p,q\in[1,\infty) : \frac{1}{p}+ \frac{1}{q} = 1$. Then the map $T: L^p \to (L^q)^*$ sending $g$ to $f\mapsto \int fgd\mu$ is an isometry (it preserves the norm).
+    \item 
+\end{enumerate}
+
+
+\end{document}
