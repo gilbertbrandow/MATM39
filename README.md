@@ -118,12 +118,12 @@
 ## Week 10 (20/2)
 
 - [ ] Lecture 10
-- [ ] Read Chapter 3.4
-  - [ ] Exercises 3.4: 1
-  - [ ] Exercises 3.4: 2
-  - [ ] Exercises 3.4: 3
-  - [ ] Exercises 3.4: 4
-  - [ ] Exercises 3.4: 5
+- [/] Read Chapter 3.4
+  - [x] Exercises 3.4: 1
+  - [x] Exercises 3.4: 2
+  - [x] Exercises 3.4: 3
+  - [x] Exercises 3.4: 4
+  - [/] Exercises 3.4: 5
   - [ ] Additional exercise: 3
 
 ## Week 11 (24/2)
