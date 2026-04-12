@@ -141,11 +141,11 @@
 
 ## Week 12 (27/2)
 
-- [ ] Lecture 12
-- [ ] Read Chapter 5.2
-  - [ ] Exercises 5.2: 1
-  - [ ] Exercises 5.2: 2
-  - [ ] Exercises 5.2: 3
+- [/] Lecture 12
+- [x] Read Chapter 5.2
+  - [x] Exercises 5.2: 1
+  - [x] Exercises 5.2: 2
+  - [/] Exercises 5.2: 3
   - [ ] Old exam March 2023 exercise 5
 
 ## Week 13 (3/3)
