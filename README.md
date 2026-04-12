@@ -103,7 +103,7 @@
 
 ## Week 9 (17/2)
 
-- [ ] Lecture 9
+- [x] Lecture 9
 - [x] Read Chapter 3.2
   - [ ] Exercises 3.2: (All optional)
 - [/] Read Chapter 3.3
@@ -128,12 +128,12 @@
 
 ## Week 11 (24/2)
 
-- [ ] Lecture 11
-- [ ] Read Chapter 5.1
-  - [ ] Exercises 5.1: 1
-  - [ ] Exercises 5.1: 2
-  - [ ] Exercises 5.1: 3
-  - [ ] Exercises 5.1: 5
+- [x] Lecture 11
+- [x] Read Chapter 5.1
+  - [x] Exercises 5.1: 1
+  - [x] Exercises 5.1: 2
+  - [x] Exercises 5.1: 3
+  - [x] Exercises 5.1: 5
 - [ ] Read Chapter 1.6
   - [ ] Exercises 1.6: 1
   - [ ] Exercises 1.6: 3
