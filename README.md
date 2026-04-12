@@ -134,9 +134,9 @@
   - [x] Exercises 5.1: 2
   - [x] Exercises 5.1: 3
   - [x] Exercises 5.1: 5
-- [ ] Read Chapter 1.6
-  - [ ] Exercises 1.6: 1
-  - [ ] Exercises 1.6: 3
+- [x] Read Chapter 1.6
+  - [x] Exercises 1.6: 1
+  - [x] Exercises 1.6: 3
   - [ ] Old exam March 2023 except 5
 
 ## Week 12 (27/2)
