@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{amsthm}
+
+\title{Integration Theory MATM39: Summary of Important Results}
+\author{Simon Gustafsson}
+\date{}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+
+\begin{document}
+\maketitle
+
+\section*{Chapter 1}
+\begin{definition}
+Let $X$ be an arbitrary set. A collection $\mathcal{A}$ of subsets of $X$ is called a \emph{$\sigma$-algebra} on $X$ if:
+\begin{enumerate}[label=(\alph*)]
+    \item $X \in \mathcal{A}$,
+    \item if $A \in \mathcal{A}$, then $A^c \in \mathcal{A}$,
+    \item if $\{A_i\}_{i=1}^\infty \subset \mathcal{A}$, then $\bigcup_{i=1}^\infty A_i \in \mathcal{A}$,
+    \item if $\{A_i\}_{i=1}^\infty \subset \mathcal{A}$, then $\bigcap_{i=1}^\infty A_i \in \mathcal{A}$.
+\end{enumerate}
+\end{definition}
+
+\begin{proof}
+Assume (a), (b), and (c). Let $\{A_i\}_{i=1}^\infty \subset \mathcal{A}$. Then $A_i^c \in \mathcal{A}$ for all $i$, and by (c),
+\(\bigcup_{i=1}^\infty A_i^c \in \mathcal{A}\). By (b) again, \(\left( \bigcup_{i=1}^\infty A_i^c \right)^c \in \mathcal{A}.\)
+By De Morgan’s law,
+\[
+\bigcap_{i=1}^\infty A_i = \left( \bigcup_{i=1}^\infty A_i^c \right)^c \in \mathcal{A}
+\]
+
+\end{proof}
+\section*{Chapter 2}
+\section*{Chapter 3}
+\section*{Chapter 5}
+
+\end{document}

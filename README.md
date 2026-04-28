@@ -150,8 +150,8 @@
 
 ## Week 13 (3/3)
 
-- [ ] Lecture 13
-- [ ] Read Chapter 5.3
+- [x] Lecture 13
+- [x] Read Chapter 5.3
   - [ ] Exercises 5.3: 1
   - [ ] Exercises 5.3: 2
   - [ ] Exercises 5.3: 3
