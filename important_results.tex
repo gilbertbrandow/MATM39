@@ -23,6 +23,8 @@
 \maketitle
 
 \section*{Chapter 1}
+
+\subsection*{Sigma Algebras}
 \begin{definition}
 Let $X$ be an arbitrary set. A collection $\mathcal{A}$ of subsets of $X$ is called a \emph{$\sigma$-algebra} on $X$ if:
 \begin{enumerate}[label=(\alph*)]
@@ -142,6 +144,58 @@ $G \in \mathcal{B}_3$. Thus every open set belongs to $\mathcal{B}_3$, so
 \mathcal{B}(\mathbb{R}) \subset \mathcal{B}_3.
 \]
 Therefore all four $\sigma$-algebras are equal.
+\end{proof}
+
+\subsection*{Measures}
+
+\begin{definition}
+Let $X$ be a set and $\mathcal{A}$ a $\sigma$-algebra on $X$. A function
+$\mu : \mathcal{A} \to [0,\infty]$ is called a \emph{measure} if
+\begin{enumerate}[label=(\alph*)]
+    \item $\mu(\emptyset) = 0$,
+    \item for every $\{A_i\}_{i=1}^\infty$ of pairwise disjoint sets in $\mathcal{A}$,
+    \(
+    \mu\!\left(\bigcup_{i=1}^\infty A_i\right) = \sum_{i=1}^\infty \mu(A_i).
+    \)
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+Let $(X,\mathcal{A},\mu)$ be a measure space.
+\begin{enumerate}[label=(\alph*)]
+    \item If $\{A_k\}$ is an increasing sequence in $\mathcal{A}$, then
+    \[
+    \mu\!\left(\bigcup_{k=1}^\infty A_k\right) = \lim_{k \to \infty} \mu(A_k).
+    \]
+    \item If $\{A_k\}$ is a decreasing sequence in $\mathcal{A}$ and
+    $\mu(A_n) < \infty$ for some $n$, then
+    \[
+    \mu\!\left(\bigcap_{k=1}^\infty A_k\right) = \lim_{k \to \infty} \mu(A_k).
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(a) Define $B_1 = A_1$ and $B_k = A_k \setminus A_{k-1}$ for $k \geq 2$.
+Then $\{B_k\}$ are disjoint and $\bigcup_k A_k = \bigcup_k B_k$. Hence
+\[
+\mu\!\left(\bigcup_k A_k\right) = \sum_k \mu(B_k)
+= \lim_{k \to \infty} \sum_{i=1}^k \mu(B_i)
+= \lim_{k \to \infty} \mu(A_k).
+\]
+
+(b) Since $\mu(A_n) < \infty$ for some $n$, we may replace $\{A_k\}$ by the
+tail $\{A_{k+n-1}\}$ and assume $\mu(A_1) < \infty$. Let $C_k = A_1 \setminus A_k$.
+Then $\{C_k\}$ is increasing and
+\[
+\bigcup_k C_k = A_1 \setminus \bigcap_k A_k.
+\]
+By (a),
+\[
+\mu(A_1 \setminus \bigcap_k A_k) = \lim_{k \to \infty} \mu(C_k)
+= \lim_{k \to \infty} \big(\mu(A_1) - \mu(A_k)\big),
+\]
+which gives $\mu(\bigcap_k A_k) = \lim_k \mu(A_k)$.
 \end{proof}
 
 \section*{Chapter 2}
