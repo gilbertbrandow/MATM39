@@ -15,6 +15,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
 \newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
 \newtheorem{remark}{Remark}
 
 
@@ -41,6 +42,34 @@ By De Morgan’s law,
 \]
 
 \end{proof}
+
+\begin{proposition}
+Let $X$ be a set. Then the intersection of an arbitrary nonempty collection of
+$\sigma$-algebras on $X$ is a $\sigma$-algebra on $X$.
+\end{proposition}
+
+\begin{proof}
+Let $\mathcal{C}$ be a nonempty collection of $\sigma$-algebras on $X$, and define
+\[
+\mathcal{A} := \bigcap_{\mathcal{B} \in \mathcal{C}} \mathcal{B}.
+\]
+Since every $\mathcal{B} \in \mathcal{C}$ contains $X$, we have $X \in \mathcal{A}$.
+If $A \in \mathcal{A}$, then $A \in \mathcal{B}$ for every
+$\mathcal{B} \in \mathcal{C}$. Since each $\mathcal{B}$ is a $\sigma$-algebra,
+$A^c \in \mathcal{B}$ for every $\mathcal{B} \in \mathcal{C}$, hence
+$A^c \in \mathcal{A}$. If $\{A_i\}_{i=1}^{\infty} \subset \mathcal{A}$, then
+$\{A_i\}_{i=1}^{\infty} \subset \mathcal{B}$ for every
+$\mathcal{B} \in \mathcal{C}$. Hence
+\[
+\bigcup_{i=1}^{\infty} A_i \in \mathcal{B}
+\]
+for every $\mathcal{B} \in \mathcal{C}$, and therefore
+\[
+\bigcup_{i=1}^{\infty} A_i \in \mathcal{A}.
+\]
+Thus $\mathcal{A}$ is a $\sigma$-algebra on $X$.
+\end{proof}
+
 \section*{Chapter 2}
 \section*{Chapter 3}
 \section*{Chapter 5}
