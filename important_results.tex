@@ -340,7 +340,91 @@ Therefore, one must restrict attention to a $\sigma$-algebra (such as the
 Lebesgue $\sigma$-algebra) on which a well-defined measure exists.
 \end{remark}
 
-\section*{Chapter 2}
+\section*{Chapter 2}¨
+\begin{definition}
+Let $(X,\mathcal{A},\mu)$ be a measure space. A nonnegative simple measurable
+function is a function of the form
+\[
+f = \sum_{i=1}^n a_i \mathbf{1}_{A_i},
+\]
+where $a_i \ge 0$ and $A_i \in \mathcal{A}$ are disjoint. Its integral is defined by
+\[
+\int f\,d\mu := \sum_{i=1}^n a_i\mu(A_i).
+\]
+\end{definition}
+
+\begin{definition}
+Let $f : X \to [0,\infty]$ be measurable. The integral of $f$ is defined by
+\[
+\int f\,d\mu
+:=
+\sup\left\{
+\int g\,d\mu : g \in \mathcal{S}_+,\ g \le f
+\right\},
+\]
+where $\mathcal{S}_+$ denotes the set of nonnegative simple measurable functions.
+\end{definition}
+
+\begin{proposition}
+Every nonnegative measurable function $f : X \to [0,\infty]$ is the pointwise
+limit of an increasing sequence of nonnegative simple measurable functions.
+\end{proposition}
+
+\begin{proof}[Reference]
+This is Proposition 2.1.8 in Cohn. It guarantees that nonnegative measurable
+functions can be approximated from below by simple functions.
+\end{proof}
+
+\begin{proposition}
+If $f_n \in \mathcal{S}_+$, $f_n \uparrow f$, and $f$ is nonnegative measurable,
+then
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{proposition}
+
+\begin{proof}[Reference]
+This is Proposition 2.3.3 in Cohn. It shows that the supremum definition agrees
+with taking limits along increasing simple approximations. Proposition 2.3.2 is
+the corresponding result when the limiting function is itself simple.
+\end{proof}
+
+\begin{remark}
+Thus the integral is first defined directly for nonnegative simple functions.
+For arbitrary nonnegative measurable functions, it is defined as the supremum of
+the integrals of all simple functions below it. Propositions 2.1.8 and 2.3.3
+show that this construction is compatible with approximation from below.
+\end{remark}
+
+\begin{definition}
+Let $f : X \to [-\infty,\infty]$ be measurable. Define
+\[
+f^+ := \max(f,0), \qquad f^- := \max(-f,0).
+\]
+Then
+\[
+f = f^+ - f^-,
+\qquad
+|f| = f^+ + f^-.
+\]
+If at least one of $\int f^+\,d\mu$ and $\int f^-\,d\mu$ is finite, then
+$\int f\,d\mu$ is said to \emph{exist}, and is defined by
+\[
+\int f\,d\mu
+:=
+\int f^+\,d\mu - \int f^-\,d\mu.
+\]
+If both $\int f^+\,d\mu$ and $\int f^-\,d\mu$ are finite, then $f$ is called
+\emph{integrable}.
+\end{definition}
+
+\begin{definition}
+If $A \in \mathcal{A}$, then $f$ is called \emph{integrable over $A$} if
+$f\mathbf{1}_A$ is integrable. In that case,
+\[
+\int_A f\,d\mu := \int f\mathbf{1}_A\,d\mu.
+\]
+\end{definition}
 \section*{Chapter 3}
 \section*{Chapter 5}
 
