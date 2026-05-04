@@ -198,6 +198,67 @@ By (a),
 which gives $\mu(\bigcap_k A_k) = \lim_k \mu(A_k)$.
 \end{proof}
 
+\subsection*{Outer Measures}
+\begin{definition}
+Let $X$ be a set. An \emph{outer measure} on $X$ is a function
+$\mu^* : \mathcal{P}(X) \to [0,\infty]$ such that
+\begin{enumerate}[label=(\alph*)]
+    \item $\mu^*(\emptyset) = 0$,
+    \item if $A \subset B$, then $\mu^*(A) \le \mu^*(B)$,
+    \item for any sequence $\{A_n\}$ of subsets of $X$,
+    \(
+    \mu^*\!\left(\bigcup_{n=1}^\infty A_n\right)
+    \le \sum_{n=1}^\infty \mu^*(A_n).
+    \)
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+The \emph{Lebesgue outer measure} on $\mathbb{R}$ is the function
+$\lambda^* : \mathcal{P}(\mathbb{R}) \to [0,\infty]$ defined by
+\[
+\lambda^*(A)
+= \inf \left\{
+\sum_{i=1}^\infty (b_i - a_i)
+:\;
+A \subset \bigcup_{i=1}^\infty (a_i,b_i)
+\right\}.
+\]
+\end{definition}
+
+\begin{definition}
+The \emph{Lebesgue outer measure} on $\mathbb{R}^d$ is defined by
+\[
+\lambda^*(A)
+= \inf \left\{
+\sum_{i=1}^\infty \mathrm{vol}(R_i)
+:\;
+A \subset \bigcup_{i=1}^\infty R_i
+\right\},
+\]
+where each $R_i$ is a bounded open rectangle in $\mathbb{R}^d$ and
+\[
+\mathrm{vol}(I_1 \times \cdots \times I_d)
+= \prod_{j=1}^d |I_j|.
+\]
+\end{definition}
+
+\begin{definition}
+Let $\mu^*$ be an outer measure on $X$. A set $B \subset X$ is called
+\emph{$\mu^*$-measurable} if for all $A \subset X$,
+\[
+\mu^*(A) = \mu^*(A \cap B) + \mu^*(A \cap B^c).
+\]
+\end{definition}
+
+\begin{remark}
+Outer measures are defined on all subsets of $X$, but are only
+subadditive in general. Carathéodory’s criterion selects a class of
+sets on which $\mu^*$ becomes additive. This allows us to restrict
+$\mu^*$ to a $\sigma$-algebra and obtain a genuine measure (in
+particular, the Lebesgue measure).
+\end{remark}
+
 \section*{Chapter 2}
 \section*{Chapter 3}
 \section*{Chapter 5}
