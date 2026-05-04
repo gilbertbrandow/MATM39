@@ -259,6 +259,40 @@ $\mu^*$ to a $\sigma$-algebra and obtain a genuine measure (in
 particular, the Lebesgue measure).
 \end{remark}
 
+\begin{theorem}
+Let $X$ be a set and $\mu^*$ an outer measure on $X$. Let
+\[
+\mathcal{M}_{\mu^*} := \{ B \subset X : B \text{ is } \mu^*\text{-measurable} \}.
+\]
+Then:
+\begin{enumerate}[label=(\alph*)]
+    \item $\mathcal{M}_{\mu^*}$ is a $\sigma$-algebra,
+    \item the restriction of $\mu^*$ to $\mathcal{M}_{\mu^*}$ is a measure.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+One shows that $\mathcal{M}_{\mu^*}$ is closed under complements directly from
+the definition. Closure under finite unions follows by applying the defining
+identity to $B_1$ and $B_2$ and decomposing sets appropriately.
+
+Closure under countable unions is obtained by first proving the result for
+finite disjoint unions and then passing to the limit using subadditivity of
+$\mu^*$.
+
+Finally, countable additivity of $\mu^*$ on $\mathcal{M}_{\mu^*}$ follows by
+applying the defining property to disjoint measurable sets and using the
+previous decomposition.
+\end{proof}
+
+\begin{remark}
+Applying this theorem to the Lebesgue outer measure $\lambda^*$ on $\mathbb{R}^d$
+produces a $\sigma$-algebra $\mathcal{M}_{\lambda^*}$, called the
+\emph{Lebesgue $\sigma$-algebra}. The restriction of $\lambda^*$ to this
+$\sigma$-algebra is the Lebesgue measure. Thus, outer measure together with
+Carathéodory’s criterion provides a systematic way to construct Lebesgue measure.
+\end{remark}
+
 \section*{Chapter 2}
 \section*{Chapter 3}
 \section*{Chapter 5}
