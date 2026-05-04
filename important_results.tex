@@ -17,6 +17,7 @@
 \newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
 \newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
 
 
 \begin{document}
@@ -291,6 +292,52 @@ produces a $\sigma$-algebra $\mathcal{M}_{\lambda^*}$, called the
 \emph{Lebesgue $\sigma$-algebra}. The restriction of $\lambda^*$ to this
 $\sigma$-algebra is the Lebesgue measure. Thus, outer measure together with
 Carathéodory’s criterion provides a systematic way to construct Lebesgue measure.
+\end{remark}
+
+\begin{example}[Cantor set]
+Let $K_0 = [0,1]$. Construct $K_n$ by removing the open middle third of each
+interval in $K_{n-1}$. The \emph{Cantor set} is
+\(
+K = \bigcap_{n=0}^\infty K_n.
+\)
+\end{example}
+
+\begin{proposition}
+The Cantor set $K$ is compact, uncountable, and has Lebesgue measure zero.
+\end{proposition}
+
+\begin{proof}[Idea]
+Each $K_n$ is a finite union of closed intervals, hence compact, and
+$K = \bigcap_n K_n$ is compact. One shows $K$ has the cardinality of the
+continuum via ternary expansions.
+
+Moreover, $\lambda(K_n) = (2/3)^n$, so
+\[
+\lambda(K) \le \lambda(K_n) = (2/3)^n \to 0,
+\]
+hence $\lambda(K)=0$.
+\end{proof}
+
+\begin{theorem}
+There exists a subset of $(0,1)$ that is not Lebesgue measurable.
+\end{theorem}
+
+\begin{proof}[Idea]
+Define $x \sim y$ if $x-y \in \mathbb{Q}$ and choose one representative from
+each equivalence class (using the axiom of choice) to form a set $E \subset (0,1)$.
+
+Consider the translates $E + r_n$ by rational numbers $r_n$. These sets are
+disjoint and their union covers $(0,1)$ up to inclusion. Translation invariance
+and countable additivity would force a contradiction, so $E$ cannot be measurable.
+\end{proof}
+
+\begin{remark}
+Not every subset of $\mathbb{R}$ can be assigned a consistent measure: the
+existence of non-measurable sets shows that countable additivity and translation
+invariance cannot hold on all subsets. 
+
+Therefore, one must restrict attention to a $\sigma$-algebra (such as the
+Lebesgue $\sigma$-algebra) on which a well-defined measure exists.
 \end{remark}
 
 \section*{Chapter 2}
