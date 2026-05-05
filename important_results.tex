@@ -425,6 +425,158 @@ $f\mathbf{1}_A$ is integrable. In that case,
 \int_A f\,d\mu := \int f\mathbf{1}_A\,d\mu.
 \]
 \end{definition}
+
+\begin{theorem}[Monotone Convergence Theorem]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f,f_1,f_2,\dots$ be $[0,\infty]$-valued measurable functions on $X$.
+Suppose that
+\[
+f_1 \le f_2 \le \cdots
+\]
+and
+\[
+f = \lim_{n\to\infty} f_n
+\]
+hold almost everywhere. Then
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{theorem}
+
+\begin{proof}
+First assume that $f_n \uparrow f$ pointwise everywhere. By monotonicity of the
+integral,
+\[
+\int f_1\,d\mu \le \int f_2\,d\mu \le \cdots \le \int f\,d\mu.
+\]
+Hence
+\[
+\lim_{n\to\infty}\int f_n\,d\mu \le \int f\,d\mu.
+\]
+
+We prove the reverse inequality. For each $n$, choose an increasing sequence
+$\{g_{n,k}\}_{k=1}^\infty$ of nonnegative simple functions such that
+\[
+g_{n,k} \uparrow f_n.
+\]
+This is possible by Proposition 2.1.8. Define
+\[
+h_n := \max(g_{1,n},g_{2,n},\dots,g_{n,n}).
+\]
+Then $\{h_n\}$ is an increasing sequence of nonnegative simple functions,
+$h_n \le f_n$, and
+\[
+h_n \uparrow f.
+\]
+Therefore, by Proposition 2.3.3,
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int h_n\,d\mu.
+\]
+Since $h_n \le f_n$, monotonicity gives
+\[
+\int h_n\,d\mu \le \int f_n\,d\mu.
+\]
+Thus
+\[
+\int f\,d\mu
+=
+\lim_{n\to\infty} \int h_n\,d\mu
+\le
+\lim_{n\to\infty} \int f_n\,d\mu.
+\]
+Combining the two inequalities gives
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+
+If the assumptions hold only almost everywhere, choose a null set $N$ outside
+which they hold. Apply the first part to $f_n\mathbf{1}_{N^c}$ and
+$f\mathbf{1}_{N^c}$. Since changing a function on a null set does not change its
+integral, the result follows.
+\end{proof}
+
+\begin{remark}
+The intuition is that for nonnegative functions, if $f_n$ increases pointwise to
+$f$, then no mass can disappear in the limit. The integrals increase to the
+integral of the limit, even if the values are infinite. This theorem is one of
+the main advantages of the Lebesgue integral over the Riemann integral.
+\end{remark}
+\begin{theorem}[Monotone Convergence Theorem]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f,f_1,f_2,\dots$ be $[0,\infty]$-valued measurable functions on $X$.
+Suppose that
+\[
+f_1 \le f_2 \le \cdots
+\]
+and
+\[
+f = \lim_{n\to\infty} f_n
+\]
+hold almost everywhere. Then
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{theorem}
+
+\begin{proof}
+First assume that $f_n \uparrow f$ pointwise everywhere. By monotonicity of the
+integral,
+\[
+\int f_1\,d\mu \le \int f_2\,d\mu \le \cdots \le \int f\,d\mu.
+\]
+Hence
+\[
+\lim_{n\to\infty}\int f_n\,d\mu \le \int f\,d\mu.
+\]
+
+We prove the reverse inequality. For each $n$, choose an increasing sequence
+$\{g_{n,k}\}_{k=1}^\infty$ of nonnegative simple functions such that
+\[
+g_{n,k} \uparrow f_n.
+\]
+This is possible by Proposition 2.1.8. Define
+\[
+h_n := \max(g_{1,n},g_{2,n},\dots,g_{n,n}).
+\]
+Then $\{h_n\}$ is an increasing sequence of nonnegative simple functions,
+$h_n \le f_n$, and
+\[
+h_n \uparrow f.
+\]
+Therefore, by Proposition 2.3.3,
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int h_n\,d\mu.
+\]
+Since $h_n \le f_n$, monotonicity gives
+\[
+\int h_n\,d\mu \le \int f_n\,d\mu.
+\]
+Thus
+\[
+\int f\,d\mu
+=
+\lim_{n\to\infty} \int h_n\,d\mu
+\le
+\lim_{n\to\infty} \int f_n\,d\mu.
+\]
+Combining the two inequalities gives
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+
+If the assumptions hold only almost everywhere, choose a null set $N$ outside
+which they hold. Apply the first part to $f_n\mathbf{1}_{N^c}$ and
+$f\mathbf{1}_{N^c}$. Since changing a function on a null set does not change its
+integral, the result follows.
+\end{proof}
+
+\begin{remark}
+The intuition is that for nonnegative functions, if $f_n$ increases pointwise to
+$f$, then no mass can disappear in the limit. The integrals increase to the
+integral of the limit, even if the values are infinite. This theorem is one of
+the main advantages of the Lebesgue integral over the Riemann integral.
+\end{remark}
+
 \section*{Chapter 3}
 \section*{Chapter 5}
 
