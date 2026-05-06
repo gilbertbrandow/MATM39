@@ -426,6 +426,162 @@ $f\mathbf{1}_A$ is integrable. In that case,
 \]
 \end{definition}
 
+\begin{proposition}[Proposition 2.3.2]
+Let $(X,\mathcal{A},\mu)$ be a measure space. Let $f\in\mathcal{S}_+$, and let
+$\{f_n\}$ be an increasing sequence in $\mathcal{S}_+$ such that
+\[
+f = \lim_{n\to\infty} f_n
+\]
+pointwise on $X$. Then
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{proposition}
+
+\begin{proof}
+By monotonicity,
+\[
+\int f_1\,d\mu \le \int f_2\,d\mu \le \cdots \le \int f\,d\mu,
+\]
+so
+\[
+\lim_{n\to\infty}\int f_n\,d\mu \le \int f\,d\mu.
+\]
+
+We prove the reverse inequality. Let $0<\varepsilon<1$. Write
+\[
+f=\sum_{i=1}^k a_i\mathbf{1}_{A_i},
+\]
+where $a_i>0$ and the sets $A_i\in\mathcal{A}$ are disjoint. For each $n$ and
+$i$, define
+\[
+A(n,i):=\{x\in A_i : f_n(x)\ge (1-\varepsilon)a_i\}.
+\]
+Then $A(n,i)\in\mathcal{A}$, the sequence $\{A(n,i)\}_{n=1}^\infty$ is increasing,
+and
+\[
+A_i=\bigcup_{n=1}^\infty A(n,i).
+\]
+Define
+\[
+g_n:=\sum_{i=1}^k (1-\varepsilon)a_i\mathbf{1}_{A(n,i)}.
+\]
+Then $g_n\in\mathcal{S}_+$ and $g_n\le f_n$. Hence
+\[
+\int g_n\,d\mu \le \int f_n\,d\mu.
+\]
+By continuity from below of measures,
+\[
+\lim_{n\to\infty}\int g_n\,d\mu
+=
+\lim_{n\to\infty}\sum_{i=1}^k (1-\varepsilon)a_i\mu(A(n,i))
+=
+\sum_{i=1}^k (1-\varepsilon)a_i\mu(A_i)
+=
+(1-\varepsilon)\int f\,d\mu.
+\]
+Therefore
+\[
+(1-\varepsilon)\int f\,d\mu
+\le
+\lim_{n\to\infty}\int f_n\,d\mu.
+\]
+Since $\varepsilon>0$ was arbitrary,
+\[
+\int f\,d\mu
+\le
+\lim_{n\to\infty}\int f_n\,d\mu.
+\]
+Thus
+\[
+\int f\,d\mu = \lim_{n\to\infty}\int f_n\,d\mu.
+\]
+\end{proof}
+
+\begin{proposition}[Proposition 2.3.3]
+Let $(X,\mathcal{A},\mu)$ be a measure space. Let $f:X\to[0,\infty]$ be
+measurable, and let $\{f_n\}$ be an increasing sequence of functions in
+$\mathcal{S}_+$ such that
+\[
+f = \lim_{n\to\infty} f_n
+\]
+pointwise on $X$. Then
+\[
+\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{proposition}
+
+\begin{proof}
+By monotonicity of the integral,
+\[
+\int f_1\,d\mu \le \int f_2\,d\mu \le \cdots \le \int f\,d\mu.
+\]
+Hence
+\[
+\lim_{n\to\infty}\int f_n\,d\mu \le \int f\,d\mu.
+\]
+
+For the reverse inequality, let $g \in \mathcal{S}_+$ with $g \le f$. Then
+$\{g \wedge f_n\}$ is an increasing sequence in $\mathcal{S}_+$ and
+\[
+g = \lim_{n\to\infty} (g \wedge f_n).
+\]
+By Proposition 2.3.2,
+\[
+\int g\,d\mu
+=
+\lim_{n\to\infty}\int (g \wedge f_n)\,d\mu.
+\]
+Since $g \wedge f_n \le f_n$, we get
+\[
+\int g\,d\mu \le \lim_{n\to\infty}\int f_n\,d\mu.
+\]
+Taking the supremum over all $g \in \mathcal{S}_+$ with $g \le f$ gives
+\[
+\int f\,d\mu \le \lim_{n\to\infty}\int f_n\,d\mu.
+\]
+Therefore,
+\[
+\int f\,d\mu = \lim_{n\to\infty}\int f_n\,d\mu.
+\]
+\end{proof}
+
+\begin{proposition}[Proposition 2.3.9]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $f,g:X\to[-\infty,\infty]$
+be measurable functions such that $f=g$ almost everywhere. If either
+$\int f\,d\mu$ or $\int g\,d\mu$ exists, then both exist and
+\[
+\int f\,d\mu = \int g\,d\mu.
+\]
+\end{proposition}
+
+\begin{proof}
+First assume that $f$ and $g$ are nonnegative. Let
+\[
+A := \{x\in X : f(x)\neq g(x)\}.
+\]
+Then $\mu(A)=0$. Define
+\[
+h(x) =
+\begin{cases}
++\infty, & x\in A,\\
+0, & x\notin A.
+\end{cases}
+\]
+Then $\int h\,d\mu = 0$. Since $f \le g+h$, monotonicity gives
+\[
+\int f\,d\mu \le \int g\,d\mu + \int h\,d\mu = \int g\,d\mu.
+\]
+Similarly, $g \le f+h$, so
+\[
+\int g\,d\mu \le \int f\,d\mu.
+\]
+Thus $\int f\,d\mu=\int g\,d\mu$.
+
+For general $f$ and $g$, apply the nonnegative case to $f^+$ and $g^+$, and to
+$f^-$ and $g^-$. Hence the integrals exist together and are equal.
+\end{proof}
+
 \begin{theorem}[Monotone Convergence Theorem]
 Let $(X,\mathcal{A},\mu)$ be a measure space, and let
 $f,f_1,f_2,\dots$ be $[0,\infty]$-valued measurable functions on $X$.
@@ -495,12 +651,6 @@ $f\mathbf{1}_{N^c}$. Since changing a function on a null set does not change its
 integral, the result follows.
 \end{proof}
 
-\begin{remark}
-The intuition is that for nonnegative functions, if $f_n$ increases pointwise to
-$f$, then no mass can disappear in the limit. The integrals increase to the
-integral of the limit, even if the values are infinite. This theorem is one of
-the main advantages of the Lebesgue integral over the Riemann integral.
-\end{remark}
 \begin{theorem}[Monotone Convergence Theorem]
 Let $(X,\mathcal{A},\mu)$ be a measure space, and let
 $f,f_1,f_2,\dots$ be $[0,\infty]$-valued measurable functions on $X$.
@@ -569,13 +719,6 @@ which they hold. Apply the first part to $f_n\mathbf{1}_{N^c}$ and
 $f\mathbf{1}_{N^c}$. Since changing a function on a null set does not change its
 integral, the result follows.
 \end{proof}
-
-\begin{remark}
-The intuition is that for nonnegative functions, if $f_n$ increases pointwise to
-$f$, then no mass can disappear in the limit. The integrals increase to the
-integral of the limit, even if the values are infinite. This theorem is one of
-the main advantages of the Lebesgue integral over the Riemann integral.
-\end{remark}
 
 \section*{Chapter 3}
 \section*{Chapter 5}
