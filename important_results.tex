@@ -714,6 +714,59 @@ $f\mathbf{1}_{N^c}$. Since changing a function on a null set does not change its
 integral, the result follows.
 \end{proof}
 
+\begin{theorem}[Fatou's Lemma]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $\{f_n\}$ be a sequence of
+$[0,\infty]$-valued measurable functions on $X$. Then
+\[
+\int \liminf_{n\to\infty} f_n \, d\mu
+\le
+\liminf_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{theorem}
+
+\begin{proof}
+For each $n$, define
+\[
+g_n := \inf_{k\ge n} f_k.
+\]
+By Proposition 2.1.5 each $g_n$ is measurable and
+\[
+g_1 \le g_2 \le \cdots.
+\]
+Moreover,
+\[
+\lim_{n\to\infty} g_n
+=
+\liminf_{n\to\infty} f_n.
+\]
+By the Monotone Convergence Theorem,
+\[
+\int \liminf_{n\to\infty} f_n\,d\mu
+=
+\int \lim_{n\to\infty} g_n\,d\mu
+=
+\lim_{n\to\infty} \int g_n\,d\mu.
+\]
+Since $g_n \le f_k$ for every $k\ge n$, we have
+\[
+\int g_n\,d\mu \le \inf_{k\ge n} \int f_k\,d\mu.
+\]
+Therefore
+\[
+\lim_{n\to\infty}\int g_n\,d\mu
+\le
+\lim_{n\to\infty}\inf_{k\ge n}\int f_k\,d\mu
+=
+\liminf_{n\to\infty}\int f_n\,d\mu.
+\]
+Hence
+\[
+\int \liminf_{n\to\infty} f_n \, d\mu
+\le
+\liminf_{n\to\infty} \int f_n\,d\mu.
+\]
+\end{proof}
+
 \section*{Chapter 3}
 \section*{Chapter 5}
 
