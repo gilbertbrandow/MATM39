@@ -1429,6 +1429,345 @@ The induced norm is
 \]
 \end{definition}
 
+\begin{lemma}[Lemma 3.3.1 Young's Inequality]
+Let $1<p<\infty$, and let $q$ be defined by
+\[
+\frac1p+\frac1q=1.
+\]
+If $x,y\ge 0$, then
+\[
+xy \le \frac{x^p}{p}+\frac{y^q}{q}.
+\]
+\end{lemma}
+
+\begin{proof}
+If $x=0$ or $y=0$, the result is clear. Assume therefore that $x,y>0$.
+It is enough to prove that, for all $u,v>0$,
+\[
+u^{1/p}v^{1/q}\le \frac{u}{p}+\frac{v}{q},
+\]
+since we may then take $u=x^p$ and $v=y^q$. Let $t=u/v$. Then the desired inequality becomes
+\[
+t^{1/p}\le \frac{t}{p}+\frac1q.
+\]
+Consider
+\[
+\varphi(t)=\frac{t}{p}+\frac1q-t^{1/p},
+\qquad t>0.
+\]
+Then
+\[
+\varphi'(t)=\frac1p-\frac1p t^{1/p-1},
+\]
+so $\varphi'(t)=0$ precisely when $t=1$. Moreover, $\varphi$ has its minimum at
+$t=1$, and
+\[
+\varphi(1)=\frac1p+\frac1q-1=0.
+\]
+Thus $\varphi(t)\ge 0$ for all $t>0$, proving the result.
+\end{proof}
+
+\begin{proposition}[Proposition 3.3.2 Hölder's Inequality]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $1\le p,q\le\infty$
+satisfy
+\[
+\frac1p+\frac1q=1.
+\]
+If $f\in L^p(X,\mathcal{A},\mu)$ and $g\in L^q(X,\mathcal{A},\mu)$, then
+$fg\in L^1(X,\mathcal{A},\mu)$ and
+\[
+\int |fg|\,d\mu \le \|f\|_p\|g\|_q.
+\]
+\end{proposition}
+
+\begin{proof}
+First suppose $p=1$ and $q=\infty$. Since
+\[
+|g|\le \|g\|_\infty
+\]
+almost everywhere, we have
+\[
+|fg|\le \|g\|_\infty |f|
+\]
+almost everywhere. Hence
+\[
+\int |fg|\,d\mu
+\le
+\|g\|_\infty\int |f|\,d\mu
+=
+\|g\|_\infty\|f\|_1.
+\]
+The case $p=\infty$ and $q=1$ is similar.
+
+Now suppose $1<p<\infty$, so also $1<q<\infty$. If $\|f\|_p=0$ or
+$\|g\|_q=0$, then $f=0$ or $g=0$ almost everywhere, and the result is clear.
+
+Assume therefore that $\|f\|_p>0$ and $\|g\|_q>0$. Define
+\[
+F=\frac{|f|}{\|f\|_p},
+\qquad
+G=\frac{|g|}{\|g\|_q}.
+\]
+Then
+\[
+\int F^p\,d\mu=1,
+\qquad
+\int G^q\,d\mu=1.
+\]
+By Young's Inequality, Lemma 3.3.1,
+\[
+FG\le \frac{F^p}{p}+\frac{G^q}{q}.
+\]
+Integrating gives
+\[
+\int FG\,d\mu
+\le
+\frac1p\int F^p\,d\mu+\frac1q\int G^q\,d\mu
+=
+\frac1p+\frac1q
+=
+1.
+\]
+Therefore
+\[
+\frac{1}{\|f\|_p\|g\|_q}\int |fg|\,d\mu
+=
+\int FG\,d\mu
+\le 1.
+\]
+Thus
+\[
+\int |fg|\,d\mu \le \|f\|_p\|g\|_q.
+\]
+In particular, $fg\in L^1$.
+\end{proof}
+
+\begin{proposition}[Proposition 3.3.3 Minkowski's Inequality]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $1\le p\le \infty$.
+If $f,g\in L^p(X,\mathcal{A},\mu)$, then $f+g\in L^p(X,\mathcal{A},\mu)$ and
+\[
+\|f+g\|_p \le \|f\|_p+\|g\|_p.
+\]
+\end{proposition}
+
+\begin{proof}
+First suppose $p=\infty$. Since
+\[
+|f|\le \|f\|_\infty,
+\qquad
+|g|\le \|g\|_\infty
+\]
+almost everywhere, we have
+\[
+|f+g|
+\le |f|+|g|
+\le \|f\|_\infty+\|g\|_\infty
+\]
+almost everywhere. Hence
+\[
+\|f+g\|_\infty
+\le
+\|f\|_\infty+\|g\|_\infty.
+\]
+
+Next suppose $p=1$. Then
+\[
+|f+g|\le |f|+|g|,
+\]
+so
+\[
+\|f+g\|_1
+=
+\int |f+g|\,d\mu
+\le
+\int |f|\,d\mu+\int |g|\,d\mu
+=
+\|f\|_1+\|g\|_1.
+\]
+
+Now suppose $1<p<\infty$, and let $q$ satisfy
+\[
+\frac1p+\frac1q=1.
+\]
+We have
+\[
+|f+g|^p
+=
+|f+g|\,|f+g|^{p-1}
+\le
+(|f|+|g|)|f+g|^{p-1}.
+\]
+Thus
+\[
+\int |f+g|^p\,d\mu
+\le
+\int |f|\,|f+g|^{p-1}\,d\mu
++
+\int |g|\,|f+g|^{p-1}\,d\mu.
+\]
+By Proposition 3.3.2, Hölder's Inequality,
+\[
+\int |f|\,|f+g|^{p-1}\,d\mu
+\le
+\|f\|_p\,\big\||f+g|^{p-1}\big\|_q,
+\]
+and similarly
+\[
+\int |g|\,|f+g|^{p-1}\,d\mu
+\le
+\|g\|_p\,\big\||f+g|^{p-1}\big\|_q.
+\]
+Since $q(p-1)=p$, we have
+\[
+\big\||f+g|^{p-1}\big\|_q
+=
+\left(\int |f+g|^{(p-1)q}\,d\mu\right)^{1/q}
+=
+\left(\int |f+g|^p\,d\mu\right)^{1/q}.
+\]
+Therefore
+\[
+\int |f+g|^p\,d\mu
+\le
+(\|f\|_p+\|g\|_p)
+\left(\int |f+g|^p\,d\mu\right)^{1/q}.
+\]
+If $\int |f+g|^p\,d\mu=0$, the result is clear. Otherwise, divide by
+\[
+\left(\int |f+g|^p\,d\mu\right)^{1/q}
+\]
+to obtain
+\[
+\left(\int |f+g|^p\,d\mu\right)^{1/p}
+\le
+\|f\|_p+\|g\|_p.
+\]
+Thus
+\[
+\|f+g\|_p
+\le
+\|f\|_p+\|g\|_p.
+\]
+\end{proof}
+
+\begin{theorem}[Completeness of $L^p$]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $1\le p\le \infty$.
+Then $L^p(X,\mathcal{A},\mu)$ is complete under the norm $\|\cdot\|_p$.
+Equivalently, $L^p$ is a Banach space.
+\end{theorem}
+
+\begin{proof}
+It is enough to show that every absolutely convergent series in $L^p$ is
+convergent. So let $\{f_k\}$ be a sequence in $\mathcal{L}^p$ such that
+\[
+\sum_{k=1}^\infty \|f_k\|_p < \infty.
+\]
+
+First consider the case $p=\infty$. For each $k$, let
+\[
+N_k:=\{x\in X: |f_k(x)|>\|f_k\|_\infty\}.
+\]
+Then each $N_k$ is locally null. Outside $\bigcup_k N_k$ we have
+\[
+|f_k(x)|\le \|f_k\|_\infty
+\]
+for every $k$, and hence the series $\sum_k f_k(x)$ converges absolutely. Define
+\[
+f(x)=
+\begin{cases}
+\sum_{k=1}^\infty f_k(x), & x\notin \bigcup_k N_k,\\
+0, & x\in \bigcup_k N_k.
+\end{cases}
+\]
+Then $f$ is measurable and essentially bounded. Moreover, outside the locally
+null set $\bigcup_k N_k$,
+\[
+\left|f(x)-\sum_{k=1}^n f_k(x)\right|
+\le
+\sum_{k=n+1}^\infty \|f_k\|_\infty.
+\]
+Therefore
+\[
+\left\|f-\sum_{k=1}^n f_k\right\|_\infty
+\le
+\sum_{k=n+1}^\infty \|f_k\|_\infty
+\to 0.
+\]
+Thus the series converges in $L^\infty$.
+
+Now suppose $1\le p<\infty$. Define
+\[
+g(x):=\left(\sum_{k=1}^\infty |f_k(x)|\right)^p,
+\]
+with the convention that $(+\infty)^p=+\infty$.
+
+By Proposition 3.3.3, Minkowski's Inequality, for each $n$,
+\[
+\left(\int \left(\sum_{k=1}^n |f_k|\right)^p d\mu\right)^{1/p}
+=
+\left\|\sum_{k=1}^n |f_k|\right\|_p
+\le
+\sum_{k=1}^n \|f_k\|_p
+\le
+\sum_{k=1}^\infty \|f_k\|_p.
+\]
+By the Monotone Convergence Theorem,
+\[
+\int g\,d\mu
+=
+\lim_{n\to\infty}
+\int \left(\sum_{k=1}^n |f_k|\right)^p d\mu
+\le
+\left(\sum_{k=1}^\infty \|f_k\|_p\right)^p
+<\infty.
+\]
+Hence $g$ is integrable. By Corollary 2.3.14, an integrable function is finite
+almost everywhere, so
+\[
+\sum_{k=1}^\infty |f_k(x)|<\infty
+\]
+for almost every $x$. Therefore the series $\sum_k f_k(x)$ converges absolutely
+almost everywhere.
+
+Define
+\[
+f(x)=
+\begin{cases}
+\sum_{k=1}^\infty f_k(x), & \text{if } \sum_{k=1}^\infty |f_k(x)|<\infty,\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+Then $f$ is measurable. Since
+\[
+|f(x)|^p\le g(x)
+\]
+almost everywhere, we get $f\in \mathcal{L}^p$.
+
+Finally, for almost every $x$,
+\[
+\left|\sum_{k=1}^n f_k(x)-f(x)\right|^p
+\to 0,
+\]
+and
+\[
+\left|\sum_{k=1}^n f_k(x)-f(x)\right|^p
+\le g(x).
+\]
+Since $g$ is integrable, the Dominated Convergence Theorem gives
+\[
+\left\|\sum_{k=1}^n f_k-f\right\|_p^p
+=
+\int \left|\sum_{k=1}^n f_k-f\right|^p d\mu
+\to 0.
+\]
+Thus
+\[
+\left\|\sum_{k=1}^n f_k-f\right\|_p\to 0.
+\]
+Hence every absolutely convergent series in $L^p$ converges, and therefore
+$L^p$ is complete.
+\end{proof}
+
 \section*{Chapter 5}
 
 \end{document}
