@@ -593,6 +593,49 @@ Thus $\int f\,d\mu=\int g\,d\mu$.
 For general $f,g$, apply the nonnegative case to $f^+,g^+$ and to $f^-,g^-$.
 \end{proof}
 
+\begin{proposition}[Proposition 2.3.10]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f:X\to[0,\infty]$ be measurable. If $t>0$ and
+\[
+A_t:=\{x\in X:f(x)\ge t\},
+\]
+then
+\[
+\mu(A_t)
+\le
+\frac{1}{t}\int_{A_t} f\,d\mu
+\le
+\frac{1}{t}\int f\,d\mu.
+\]
+\end{proposition}
+
+\begin{proof}
+On $A_t$ we have $f\ge t$, hence
+\[
+0\le t\mathbf{1}_{A_t}\le f\mathbf{1}_{A_t}\le f.
+\]
+By monotonicity of the integral,
+\[
+\int t\mathbf{1}_{A_t}\,d\mu
+\le
+\int_{A_t} f\,d\mu
+\le
+\int f\,d\mu.
+\]
+Since
+\[
+\int t\mathbf{1}_{A_t}\,d\mu=t\mu(A_t),
+\]
+division by $t$ gives
+\[
+\mu(A_t)
+\le
+\frac{1}{t}\int_{A_t} f\,d\mu
+\le
+\frac{1}{t}\int f\,d\mu.
+\]
+\end{proof}
+
 \begin{theorem}[Monotone Convergence Theorem]
 Let $(X,\mathcal{A},\mu)$ be a measure space, and let
 $f,f_1,f_2,\dots$ be $[0,\infty]$-valued measurable functions on $X$.
@@ -1103,6 +1146,187 @@ of the sets $A_k$. Therefore, for all sufficiently large $k$,
 \]
 which implies $f_{n_k}(x)\to f(x)$. Thus $f_{n_k}\to f$ almost everywhere.
 \end{proof}
+
+\begin{theorem}[Egoroff's Theorem]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $f,f_1,f_2,\dots$ be
+real-valued measurable functions on $X$. If $\mu(X)<\infty$ and
+\[
+f_n \to f
+\]
+almost everywhere, then for every $\varepsilon>0$ there exists a set
+$B\in\mathcal{A}$ such that
+\[
+\mu(B^c)<\varepsilon
+\]
+and $f_n\to f$ uniformly on $B$.
+\end{theorem}
+
+\begin{proof}
+Fix $\varepsilon>0$. For each $n$, define
+\[
+g_n:=\sup_{j\ge n}|f_j-f|.
+\]
+Since $f_n\to f$ almost everywhere, we have
+\[
+g_n\to 0
+\]
+almost everywhere. Since $\mu(X)<\infty$, Proposition 3.1.2 implies that
+$g_n\to 0$ in measure.
+
+Hence, for each $k$, we can choose $n_k$ such that
+\[
+\mu\left(\left\{x\in X:g_{n_k}(x)>\frac1k\right\}\right)
+<
+\frac{\varepsilon}{2^k}.
+\]
+Define
+\[
+B_k:=\left\{x\in X:g_{n_k}(x)\le \frac1k\right\},
+\qquad
+B:=\bigcap_{k=1}^\infty B_k.
+\]
+Then
+\[
+B^c=\bigcup_{k=1}^\infty B_k^c,
+\]
+so by subadditivity,
+\[
+\mu(B^c)
+\le
+\sum_{k=1}^\infty \mu(B_k^c)
+<
+\sum_{k=1}^\infty \frac{\varepsilon}{2^k}
+=
+\varepsilon.
+\]
+
+It remains to show uniform convergence on $B$. Let $\delta>0$ and choose $k$
+such that $1/k<\delta$. Since $B\subset B_k$, for every $x\in B$ we have
+\[
+g_{n_k}(x)\le \frac1k<\delta.
+\]
+Thus, for every $n\ge n_k$ and every $x\in B$,
+\[
+|f_n(x)-f(x)|
+\le
+g_{n_k}(x)
+<
+\delta.
+\]
+Therefore $f_n\to f$ uniformly on $B$.
+\end{proof}
+
+\begin{proposition}
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f,f_1,f_2,\dots \in \mathcal{L}^1(X,\mathcal{A},\mu)$. If $f_n\to f$ in mean, i.e.
+\[
+\int |f_n-f|\,d\mu \to 0,
+\]
+then $f_n\to f$ in measure.
+\end{proposition}
+
+\begin{proof}
+For every $\varepsilon>0$, Proposition 2.3.10 inequality gives
+\[
+\mu\big(\{x\in X: |f_n(x)-f(x)|>\varepsilon\}\big)
+\le
+\frac{1}{\varepsilon}\int |f_n-f|\,d\mu.
+\]
+Since the right-hand side tends to $0$, we get
+\[
+\mu\big(\{x\in X: |f_n(x)-f(x)|>\varepsilon\}\big)\to 0.
+\]
+Thus $f_n\to f$ in measure.
+\end{proof}
+
+\begin{proposition}[Propositions 3.1.5]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f,f_1,f_2,\dots \in \mathcal{L}^1(X,\mathcal{A},\mu)$. Suppose that $f_n\to f$ almost
+everywhere or in measure. If there exists an integrable function
+$g:X\to[0,\infty]$ such that
+\[
+|f_n|\le g
+\quad\text{and}\quad
+|f|\le g
+\]
+almost everywhere, then $f_n\to f$ in mean.
+\end{proposition}
+
+\begin{proof}
+First suppose that $f_n\to f$ almost everywhere. Then
+\[
+|f_n-f|\to 0
+\]
+almost everywhere, and
+\[
+|f_n-f|\le |f_n|+|f|\le 2g
+\]
+almost everywhere. Since $2g$ is integrable, the Dominated Convergence Theorem
+implies
+\[
+\int |f_n-f|\,d\mu \to 0.
+\]
+Hence $f_n\to f$ in mean.
+
+Now suppose instead that $f_n\to f$ in measure. By Proposition 3.1.3, every
+subsequence of $\{f_n\}$ has a further subsequence that converges to $f$ almost
+everywhere. By the first part, every such further subsequence converges to $f$
+in mean.
+
+If $f_n$ did not converge to $f$ in mean, then there would exist
+$\varepsilon>0$ and a subsequence $\{f_{n_k}\}$ such that
+\[
+\int |f_{n_k}-f|\,d\mu \ge \varepsilon
+\]
+for all $k$. But this subsequence has a further subsequence converging to $f$
+almost everywhere, and hence in mean by the first part, a contradiction.
+Therefore $f_n\to f$ in mean.
+\end{proof}
+
+\begin{proposition}[Propositions 3.1.6]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f,f_1,f_2,\dots \in L^1(X,\mathcal{A},\mu)$. Suppose that $f_n\to f$ almost
+everywhere or in measure. If there exists an integrable function
+$g:X\to[0,\infty]$ such that
+\[
+|f_n|\le g
+\quad \text{for all } n,
+\qquad
+|f|\le g
+\]
+almost everywhere, then $f_n\to f$ in mean, i.e. $\int |f_n-f|\,d\mu \to 0.$
+\end{proposition}
+
+\begin{proof}
+First suppose that $f_n\to f$ almost everywhere. Then
+\[
+|f_n-f|\to 0
+\]
+almost everywhere. Moreover,
+\[
+|f_n-f|\le |f_n|+|f|\le 2g
+\]
+almost everywhere. Since $2g$ is integrable, the Dominated Convergence Theorem
+implies
+\[
+\int |f_n-f|\,d\mu \to 0.
+\]
+Thus $f_n\to f$ in mean. Now suppose instead that $f_n\to f$ in measure. By Proposition 3.1.3, every
+subsequence of $\{f_n\}$ has a further subsequence converging to $f$ almost
+everywhere. By the first part, every such further subsequence converges to $f$
+in mean.
+
+If $f_n$ did not converge to $f$ in mean, then there would exist
+$\varepsilon>0$ and a subsequence $\{f_{n_k}\}$ such that
+\[
+\int |f_{n_k}-f|\,d\mu \ge \varepsilon
+\]
+for every $k$. But this subsequence has a further subsequence converging to $f$
+almost everywhere, hence in mean by the first part. This is a contradiction.
+Therefore $f_n\to f$ in mean.
+\end{proof}
+
+
 
 \section*{Chapter 5}
 
