@@ -1326,7 +1326,108 @@ almost everywhere, hence in mean by the first part. This is a contradiction.
 Therefore $f_n\to f$ in mean.
 \end{proof}
 
+\begin{definition}
+Let $V$ be a real vector space. A function $\|\cdot\|:V\to[0,\infty)$ is called
+a \emph{norm} if, for all $x,y\in V$ and $\alpha\in\mathbb{R}$,
+\begin{enumerate}[label=(\alph*)]
+    \item $\|x\|=0$ if and only if $x=0$,
+    \item $\|\alpha x\|=|\alpha|\|x\|$,
+    \item $\|x+y\|\le \|x\|+\|y\|$.
+\end{enumerate}
+A vector space with a norm is called a \emph{normed vector space}.
+\end{definition}
 
+\begin{definition}
+Let $V$ be a real vector space. A function
+$\langle \cdot,\cdot\rangle:V\times V\to\mathbb{R}$ is called an
+\emph{inner product} if, for all $x,y,z\in V$ and $\alpha,\beta\in\mathbb{R}$,
+\begin{enumerate}[label=(\alph*)]
+    \item $\langle x,x\rangle\ge 0$, with equality if and only if $x=0$,
+    \item $\langle x,y\rangle=\langle y,x\rangle$,
+    \item $\langle \alpha x+\beta y,z\rangle
+    =\alpha\langle x,z\rangle+\beta\langle y,z\rangle$.
+\end{enumerate}
+It induces the norm
+\[
+\|x\|:=\sqrt{\langle x,x\rangle}.
+\]
+\end{definition}
+
+\begin{definition}
+Let $(X,\mathcal{A},\mu)$ be a measure space and let $1\le p<\infty$. Define
+\[
+\mathcal{L}^p(X,\mathcal{A},\mu)
+:=
+\left\{
+f:X\to\mathbb{R} \text{ measurable} :
+\int |f|^p\,d\mu<\infty
+\right\}.
+\]
+For $f\in\mathcal{L}^p$, define
+\[
+\|f\|_p
+:=
+\left(\int |f|^p\,d\mu\right)^{1/p}.
+\]
+\end{definition}
+
+\begin{definition}
+Let
+\[
+\mathcal{N}^p(X,\mathcal{A},\mu)
+:=
+\{f\in\mathcal{L}^p(X,\mathcal{A},\mu):\|f\|_p=0\}.
+\]
+For $1\le p<\infty$, this is precisely the set of functions in
+$\mathcal{L}^p$ that vanish almost everywhere.
+\end{definition}
+
+\begin{definition}
+The space $L^p(X,\mathcal{A},\mu)$ is defined as the quotient space
+\[
+L^p(X,\mathcal{A},\mu)
+:=
+\mathcal{L}^p(X,\mathcal{A},\mu)/\mathcal{N}^p(X,\mathcal{A},\mu).
+\]
+Equivalently, elements of $L^p$ are equivalence classes of functions in
+$\mathcal{L}^p$, where
+\[
+f\sim g
+\quad\Longleftrightarrow\quad
+f-g\in \mathcal{N}^p
+\quad\Longleftrightarrow\quad
+f=g \text{ almost everywhere}.
+\]
+\end{definition}
+
+\begin{remark}
+If $\langle f\rangle$ denotes the equivalence class of $f$, then
+\[
+\langle f\rangle+\langle g\rangle:=\langle f+g\rangle,
+\qquad
+\alpha\langle f\rangle:=\langle \alpha f\rangle.
+\]
+Moreover, if $f\sim g$, then $\|f\|_p=\|g\|_p$, so the formula
+\[
+\|\langle f\rangle\|_p:=\|f\|_p
+\]
+is well-defined. This gives a norm on $L^p$.
+\end{remark}
+
+\begin{definition}
+For $p=2$, the space $L^2(X,\mathcal{A},\mu)$ has the inner product
+\[
+\langle f,g\rangle
+:=
+\int fg\,d\mu.
+\]
+The induced norm is
+\[
+\|f\|_2
+=
+\left(\int |f|^2\,d\mu\right)^{1/2}.
+\]
+\end{definition}
 
 \section*{Chapter 5}
 
