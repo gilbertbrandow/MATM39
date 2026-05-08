@@ -540,7 +540,7 @@ Since $g \wedge f_n \le f_n$, we arrive at
 \]
 \end{proof}
 
-\begin{proposition}[Proposition 2.3.9]
+\begin{proposition}
 Let $(X,\mathcal{A},\mu)$ be a measure space, and let $f,g:X\to[-\infty,\infty]$
 be measurable functions such that $f=g$ almost everywhere. If either
 $\int f\,d\mu$ or $\int g\,d\mu$ exists, then both exist and
@@ -550,30 +550,47 @@ $\int f\,d\mu$ or $\int g\,d\mu$ exists, then both exist and
 \end{proposition}
 
 \begin{proof}
-First assume that $f$ and $g$ are nonnegative. Let
+First suppose $f,g\ge 0$. Let
 \[
-A := \{x\in X : f(x)\neq g(x)\}.
+A=\{x\in X:f(x)\neq g(x)\}.
 \]
 Then $\mu(A)=0$. Define
 \[
-h(x) =
+h(x)=
 \begin{cases}
 +\infty, & x\in A,\\
 0, & x\notin A.
 \end{cases}
 \]
-Then $\int h\,d\mu = 0$. Since $f \le g+h$, monotonicity gives
+
+Since $\mu(A)=0$, define
 \[
-\int f\,d\mu \le \int g\,d\mu + \int h\,d\mu = \int g\,d\mu.
+h_n := n\mathbf{1}_A.
 \]
-Similarly, $g \le f+h$, so
+Then $h_n \in \mathcal{S}_+$, $h_n \uparrow h$, and
+\[
+\int h_n\,d\mu = n\mu(A)=0.
+\]
+By Proposition 2.3.3,
+\[
+\int h\,d\mu
+=
+\lim_{n\to\infty}\int h_n\,d\mu
+=
+0.
+\]
+
+Since $f\le g+h$ and $g\le f+h$, monotonicity gives
+\[
+\int f\,d\mu \le \int g\,d\mu+\int h\,d\mu=\int g\,d\mu
+\]
+and similarly
 \[
 \int g\,d\mu \le \int f\,d\mu.
 \]
 Thus $\int f\,d\mu=\int g\,d\mu$.
 
-For general $f$ and $g$, apply the nonnegative case to $f^+$ and $g^+$, and to
-$f^-$ and $g^-$. Hence the integrals exist together and are equal.
+For general $f,g$, apply the nonnegative case to $f^+,g^+$ and to $f^-,g^-$.
 \end{proof}
 
 \begin{theorem}[Monotone Convergence Theorem]
