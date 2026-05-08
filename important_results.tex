@@ -910,6 +910,107 @@ u(f,\mathcal{P})-l(f,\mathcal{P})<\varepsilon.
 \]
 \end{lemma}
 
+\begin{theorem}
+Let $[a,b]$ be a closed bounded interval, and let
+$f:[a,b]\to\mathbb{R}$ be bounded. Then:
+\begin{enumerate}[label=(\alph*)]
+    \item $f$ is Riemann integrable if and only if $f$ is continuous almost
+    everywhere on $[a,b]$;
+    \item if $f$ is Riemann integrable, then $f$ is Lebesgue integrable and
+    \[
+    (R)\int_a^b f(x)\,dx
+    =
+    (L)\int_{[a,b]} f\,d\lambda.
+    \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Assume first that $f$ is Riemann integrable. Choose partitions
+$\mathcal{P}_n$ such that
+\[
+u(f,\mathcal{P}_n)-l(f,\mathcal{P}_n)\to 0,
+\]
+and refine them if necessary so that $\mathcal{P}_{n+1}$ refines
+$\mathcal{P}_n$.
+
+Define simple functions $g_n$ and $h_n$ by letting $g_n$ be the infimum of $f$
+on each interval of $\mathcal{P}_n$, and $h_n$ the supremum of $f$ on each such
+interval. Then
+\[
+g_n \le f \le h_n,
+\]
+with $\{g_n\}$ increasing and $\{h_n\}$ decreasing. Moreover,
+\[
+\int_{[a,b]} g_n\,d\lambda = l(f,\mathcal{P}_n),
+\qquad
+\int_{[a,b]} h_n\,d\lambda = u(f,\mathcal{P}_n).
+\]
+Let
+\[
+g=\lim_{n\to\infty} g_n,
+\qquad
+h=\lim_{n\to\infty} h_n.
+\]
+Since the lower and upper sums have the same limit, we get
+\[
+\int_{[a,b]} (h-g)\,d\lambda = 0.
+\]
+Since $h-g\ge 0$, this implies $h=g$ almost everywhere. Outside the partition
+points, equality $g(x)=h(x)$ forces $f$ to be continuous at $x$. Hence $f$ is
+continuous almost everywhere. Also, since $g\le f\le h$ and $g=h$ almost
+everywhere, $f$ agrees almost everywhere with the measurable function $g$.
+Therefore $f$ is Lebesgue measurable and integrable, and the Riemann and
+Lebesgue integrals agree.
+
+Conversely, suppose that $f$ is continuous almost everywhere. Take partitions
+$\mathcal{P}_n$ into equal subintervals and define $g_n,h_n$ as above. Then
+\[
+h_n-g_n \to 0
+\]
+almost everywhere. Since $f$ is bounded, the functions $h_n-g_n$ are dominated
+by an integrable constant. By the Dominated Convergence Theorem,
+\[
+\int_{[a,b]} (h_n-g_n)\,d\lambda \to 0.
+\]
+Thus
+\[
+u(f,\mathcal{P}_n)-l(f,\mathcal{P}_n)\to 0.
+\]
+By the Riemann criterion, $f$ is Riemann integrable.
+\end{proof}
+
+\begin{proposition}[Triangle inequality for integrals]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let
+$f:X\to[-\infty,\infty]$ be measurable. Then $f$ is integrable if and only if
+$|f|$ is integrable. In that case,
+\[
+\left|\int f\,d\mu\right|
+\le
+\int |f|\,d\mu.
+\]
+\end{proposition}
+
+\begin{proof}
+Recall that
+\[
+f=f^+-f^-,
+\qquad
+|f|=f^++f^-.
+\]
+Thus $f$ is integrable if and only if both $f^+$ and $f^-$ are integrable, which
+is equivalent to $|f|$ being integrable. If $f$ is integrable, then
+\[
+\left|\int f\,d\mu\right|
+=
+\left|\int f^+\,d\mu-\int f^-\,d\mu\right|
+\le
+\int f^+\,d\mu+\int f^-\,d\mu
+=
+\int |f|\,d\mu.
+\]
+\end{proof}
+
 \section*{Chapter 3}
 \section*{Chapter 5}
 
