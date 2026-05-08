@@ -850,6 +850,66 @@ $f_n\mathbf{1}_{N^c}=f_n$ almost everywhere, Proposition 2.3.9 gives
 
 \end{proof}
 
+\begin{definition}
+Let $f:[a,b]\to\mathbb{R}$ be bounded, and let
+\[
+\mathcal{P}=\{a=x_0<x_1<\cdots<x_n=b\}
+\]
+be a partition of $[a,b]$. Define
+\[
+m_i=\inf_{x\in[x_{i-1},x_i]} f(x),
+\qquad
+M_i=\sup_{x\in[x_{i-1},x_i]} f(x).
+\]
+The \emph{lower sum} and \emph{upper sum} of $f$ with respect to $\mathcal{P}$
+are
+\[
+l(f,\mathcal{P})
+=
+\sum_{i=1}^n m_i(x_i-x_{i-1}),
+\]
+and
+\[
+u(f,\mathcal{P})
+=
+\sum_{i=1}^n M_i(x_i-x_{i-1}).
+\]
+\end{definition}
+
+\begin{definition}
+The \emph{lower Riemann integral} and \emph{upper Riemann integral} of $f$ over
+$[a,b]$ are defined by
+\[
+\underline{\int_a^b} f
+=
+\sup_{\mathcal{P}} l(f,\mathcal{P}),
+\qquad
+\overline{\int_a^b} f
+=
+\inf_{\mathcal{P}} u(f,\mathcal{P}).
+\]
+If
+\[
+\underline{\int_a^b} f
+=
+\overline{\int_a^b} f,
+\]
+then $f$ is called \emph{Riemann integrable} on $[a,b]$, and the common value is
+denoted by
+\[
+\int_a^b f(x)\,dx.
+\]
+\end{definition}
+
+\begin{lemma}[Lemma 2.5.1]
+A bounded function $f:[a,b]\to\mathbb{R}$ is Riemann integrable if and only if
+for every $\varepsilon>0$ there exists a partition $\mathcal{P}$ of $[a,b]$ such
+that
+\[
+u(f,\mathcal{P})-l(f,\mathcal{P})<\varepsilon.
+\]
+\end{lemma}
+
 \section*{Chapter 3}
 \section*{Chapter 5}
 
