@@ -1468,78 +1468,79 @@ Thus $\varphi(t)\ge 0$ for all $t>0$, proving the result.
 \end{proof}
 
 \begin{proposition}[Proposition 3.3.2 Hölder's Inequality]
-Let $(X,\mathcal{A},\mu)$ be a measure space, and let $1\le p,q\le\infty$
-satisfy
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $p$ and $q$ satisfy
 \[
-\frac1p+\frac1q=1.
+1\le p\le +\infty,\qquad 1\le q\le +\infty,
+\qquad \frac1p+\frac1q=1.
 \]
-If $f\in L^p(X,\mathcal{A},\mu)$ and $g\in L^q(X,\mathcal{A},\mu)$, then
-$fg\in L^1(X,\mathcal{A},\mu)$ and
+If $f\in \mathcal{L}^p(X,\mathcal{A},\mu)$ and
+$g\in \mathcal{L}^q(X,\mathcal{A},\mu)$, then
+$fg\in \mathcal{L}^1(X,\mathcal{A},\mu)$ and
 \[
 \int |fg|\,d\mu \le \|f\|_p\|g\|_q.
 \]
 \end{proposition}
 
 \begin{proof}
-First suppose $p=1$ and $q=\infty$. Since
+First suppose that $p=1$ and $q=+\infty$. Since
 \[
-|g|\le \|g\|_\infty
+|g(x)|\le \|g\|_\infty
 \]
-almost everywhere, we have
+holds almost everywhere, we have
 \[
-|fg|\le \|g\|_\infty |f|
+|f(x)g(x)|\le \|g\|_\infty |f(x)|
 \]
-almost everywhere. Hence
+almost everywhere. Hence $fg\in \mathcal{L}^1(X,\mathcal{A},\mu)$ and
 \[
 \int |fg|\,d\mu
 \le
-\|g\|_\infty\int |f|\,d\mu
+\int \|g\|_\infty |f|\,d\mu
 =
 \|g\|_\infty\|f\|_1.
 \]
-The case $p=\infty$ and $q=1$ is similar.
+The case $p=+\infty$ and $q=1$ is similar.
 
-Now suppose $1<p<\infty$, so also $1<q<\infty$. If $\|f\|_p=0$ or
-$\|g\|_q=0$, then $f=0$ or $g=0$ almost everywhere, and the result is clear.
-
-Assume therefore that $\|f\|_p>0$ and $\|g\|_q>0$. Define
+Now suppose that $1<p<+\infty$, and hence $1<q<+\infty$. By Young's
+Inequality, Lemma 3.3.1,
 \[
-F=\frac{|f|}{\|f\|_p},
-\qquad
-G=\frac{|g|}{\|g\|_q}.
-\]
-Then
-\[
-\int F^p\,d\mu=1,
-\qquad
-\int G^q\,d\mu=1.
-\]
-By Young's Inequality, Lemma 3.3.1,
-\[
-FG\le \frac{F^p}{p}+\frac{G^q}{q}.
-\]
-Integrating gives
-\[
-\int FG\,d\mu
+|f(x)g(x)|
 \le
-\frac1p\int F^p\,d\mu+\frac1q\int G^q\,d\mu
+\frac1p |f(x)|^p+\frac1q |g(x)|^q
+\]
+for each $x\in X$. Hence, if $\|f\|_p=1$ and $\|g\|_q=1$, then
+$fg\in \mathcal{L}^1(X,\mathcal{A},\mu)$ and
+\[
+\int |fg|\,d\mu
+\le
+\frac1p\int |f|^p\,d\mu
++
+\frac1q\int |g|^q\,d\mu
 =
 \frac1p+\frac1q
 =
 1.
 \]
-Therefore
+
+If neither $\|f\|_p$ nor $\|g\|_q$ is zero, apply the previous inequality to
 \[
-\frac{1}{\|f\|_p\|g\|_q}\int |fg|\,d\mu
-=
-\int FG\,d\mu
-\le 1.
+\frac{f}{\|f\|_p}
+\qquad\text{and}\qquad
+\frac{g}{\|g\|_q}.
 \]
-Thus
+Then
 \[
-\int |fg|\,d\mu \le \|f\|_p\|g\|_q.
+\frac{1}{\|f\|_p\|g\|_q}
+\int |fg|\,d\mu
+\le 1,
 \]
-In particular, $fg\in L^1$.
+and hence
+\[
+\int |fg|\,d\mu
+\le
+\|f\|_p\|g\|_q.
+\]
+If $\|f\|_p=0$ or $\|g\|_q=0$, then $fg=0$ almost everywhere, and the inequality
+is clear.
 \end{proof}
 
 \begin{proposition}[Proposition 3.3.3 Minkowski's Inequality]
