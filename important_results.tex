@@ -1012,6 +1012,98 @@ is equivalent to $|f|$ being integrable. If $f$ is integrable, then
 \end{proof}
 
 \section*{Chapter 3}
+\begin{proposition}[Proposition 3.1.3]
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $f,f_1,f_2,\dots$ be
+real-valued measurable functions on $X$. If $\mu(X)<\infty$ and
+\[
+f_n \to f
+\]
+almost everywhere, then $f_n \to f$ in measure.
+\end{proposition}
+
+\begin{proof}
+We must show that for every $\varepsilon>0$,
+\[
+\mu\big(\{x\in X: |f_n(x)-f(x)|>\varepsilon\}\big)\to 0.
+\]
+Fix $\varepsilon>0$ and define
+\[
+A_n:=\{x\in X: |f_n(x)-f(x)|>\varepsilon\},
+\qquad
+B_n:=\bigcup_{k=n}^\infty A_k.
+\]
+Then $\{B_n\}$ is a decreasing sequence of measurable sets. Moreover,
+\[
+\bigcap_{n=1}^\infty B_n
+\subset
+\{x\in X : f_n(x) \text{ does not converge to } f(x)\}.
+\]
+Since $f_n\to f$ almost everywhere, this intersection has measure zero.
+
+Because $\mu(X)<\infty$ and $B_1\subset X$, we have $\mu(B_1)<\infty$. Hence,
+by continuity from above of measures, Proposition 1.2.5,
+\[
+\mu(B_n)\to \mu\!\left(\bigcap_{n=1}^\infty B_n\right)=0.
+\]
+Since $A_n\subset B_n$, we get
+\[
+0\le \mu(A_n)\le \mu(B_n)\to 0.
+\]
+Therefore,
+\[
+\mu\big(\{x\in X: |f_n(x)-f(x)|>\varepsilon\}\big)\to 0,
+\]
+so $f_n\to f$ in measure.
+\end{proof}
+
+\begin{proposition}
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $f,f_1,f_2,\dots$ be
+real-valued measurable functions on $X$. If $f_n\to f$ in measure, then there
+exists a subsequence $\{f_{n_k}\}$ such that $f_{n_k}\to f$ almost everywhere.
+\end{proposition}
+
+\begin{proof}
+Since $f_n\to f$ in measure, for each $k$ we can choose $n_k>n_{k-1}$ such that
+\[
+\mu\left(\left\{x\in X: |f_{n_k}(x)-f(x)|>\frac1k\right\}\right)
+\le \frac1{2^k}.
+\]
+Define
+\[
+A_k:=\left\{x\in X: |f_{n_k}(x)-f(x)|>\frac1k\right\}.
+\]
+Then
+\[
+\sum_{k=1}^\infty \mu(A_k) \le \sum_{k=1}^\infty \frac1{2^k}<\infty.
+\]
+Now consider
+\[
+\limsup_{k\to\infty} A_k
+=
+\bigcap_{j=1}^\infty \bigcup_{k=j}^\infty A_k.
+\]
+For every $j$,
+\[
+\mu\left(\bigcup_{k=j}^\infty A_k\right)
+\le
+\sum_{k=j}^\infty \mu(A_k)
+\le
+\sum_{k=j}^\infty \frac1{2^k}
+\to 0.
+\]
+Hence
+\[
+\mu\left(\limsup_{k\to\infty} A_k\right)=0.
+\]
+
+If $x\notin \limsup_{k\to\infty} A_k$, then $x$ belongs to only finitely many
+of the sets $A_k$. Therefore, for all sufficiently large $k$,
+\[
+|f_{n_k}(x)-f(x)|\le \frac1k,
+\]
+which implies $f_{n_k}(x)\to f(x)$. Thus $f_{n_k}\to f$ almost everywhere.
+\end{proof}
+
 \section*{Chapter 5}
 
 \end{document}
