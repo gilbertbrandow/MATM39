@@ -1051,9 +1051,7 @@ Fix $\varepsilon>0$ and define
 A_n^\varepsilon:=\{x\in X: |f_n(x)-f(x)|>\varepsilon\}.
 \]
 
-Since $f_n\to f$ almost everywhere, we have $\mathbf{1}_{A_n^\varepsilon}(x)\to 0$ for almost every $x\in X$. Indeed, if $f_n(x)\to f(x)$, then eventually
-$|f_n(x)-f(x)|\le \varepsilon$, so eventually
-$\mathbf{1}_{A_n^\varepsilon}(x)=0$.
+Since $f_n\to f$ almost everywhere, we have $\mathbf{1}_{A_n^\varepsilon}(x)\to 0$ for almost every $x\in X$.
 
 Also, $0\le \mathbf{1}_{A_n^\varepsilon}\le 1,$
 and since $\mu(X)<\infty$, the function $1$ is integrable:
@@ -1072,7 +1070,7 @@ Thus, by the Dominated Convergence Theorem,
 =
 0.
 \]
-Therefore $f_n\to f$ in measure.
+Since $\varepsilon$ was arbitrary, $f_n\to f$ in measure.
 \end{proof}
 
 \begin{proposition}
