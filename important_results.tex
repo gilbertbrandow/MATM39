@@ -2069,4 +2069,159 @@ The same argument gives
 Hence the theorem follows.
 \end{proof}
 
+\begin{theorem}[Fubini's Theorem]
+Let $(X,\mathcal{A},\mu)$ and $(Y,\mathcal{B},\nu)$ be $\sigma$-finite measure
+spaces, and let
+\[
+f:X\times Y\to[-\infty,\infty]
+\]
+be $\mathcal{A}\times\mathcal{B}$-measurable and $\mu\times\nu$-integrable.
+Then:
+\begin{enumerate}[label=(\alph*)]
+    \item for $\mu$-almost every $x\in X$, the section $f_x$ is
+    $\nu$-integrable, and for $\nu$-almost every $y\in Y$, the section $f^y$
+    is $\mu$-integrable;
+
+    \item the functions $I_f$ and $J_f$ defined by
+    \[
+    I_f(x)=
+    \begin{cases}
+    \displaystyle \int_Y f_x\,d\nu, & \text{if } f_x \text{ is } \nu\text{-integrable},\\
+    0, & \text{otherwise},
+    \end{cases}
+    \]
+    and
+    \[
+    J_f(y)=
+    \begin{cases}
+    \displaystyle \int_X f^y\,d\mu, & \text{if } f^y \text{ is } \mu\text{-integrable},\\
+    0, & \text{otherwise},
+    \end{cases}
+    \]
+    belong to $\mathcal{L}^1(X,\mathcal{A},\mu)$ and
+    $\mathcal{L}^1(Y,\mathcal{B},\nu)$ respectively;
+
+    \item
+    \[
+    \int_{X\times Y} f\,d(\mu\times\nu)
+    =
+    \int_X I_f\,d\mu
+    =
+    \int_Y J_f\,d\nu.
+    \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Write
+\[
+f=f^+-f^-,
+\]
+where $f^+$ and $f^-$ are the positive and negative parts of $f$. Since $f$ is
+$\mu\times\nu$-integrable, both
+\[
+\int_{X\times Y} f^+\,d(\mu\times\nu)
+\qquad\text{and}\qquad
+\int_{X\times Y} f^-\,d(\mu\times\nu)
+\]
+are finite.
+
+By Lemma 5.1.2, the sections $f_x$, $(f^+)_x$, and $(f^-)_x$ are
+$\mathcal{B}$-measurable for each $x\in X$. Applying Tonelli's Theorem,
+Proposition 5.2.1, to the nonnegative functions $f^+$ and $f^-$ gives
+\[
+\int_X\left(\int_Y (f^+)_x\,d\nu\right)d\mu
+=
+\int_{X\times Y} f^+\,d(\mu\times\nu)
+<\infty
+\]
+and
+\[
+\int_X\left(\int_Y (f^-)_x\,d\nu\right)d\mu
+=
+\int_{X\times Y} f^-\,d(\mu\times\nu)
+<\infty.
+\]
+Hence the functions
+\[
+x\mapsto \int_Y (f^+)_x\,d\nu,
+\qquad
+x\mapsto \int_Y (f^-)_x\,d\nu
+\]
+are $\mu$-integrable. Therefore they are finite $\mu$-almost everywhere.
+
+It follows that for $\mu$-almost every $x$, both
+\[
+\int_Y (f^+)_x\,d\nu
+\qquad\text{and}\qquad
+\int_Y (f^-)_x\,d\nu
+\]
+are finite. For such $x$, the section $f_x$ is $\nu$-integrable and
+\[
+\int_Y f_x\,d\nu
+=
+\int_Y (f^+)_x\,d\nu
+-
+\int_Y (f^-)_x\,d\nu.
+\]
+Thus $f_x$ is $\nu$-integrable for $\mu$-almost every $x$.
+
+Let $N$ be the null set of points $x$ for which one of these two integrals is
+infinite. Then
+\[
+I_f(x)=
+\begin{cases}
+\displaystyle
+\int_Y (f^+)_x\,d\nu-\int_Y (f^-)_x\,d\nu,
+& x\notin N,\\
+0, & x\in N.
+\end{cases}
+\]
+Thus $I_f$ agrees almost everywhere with the integrable function
+\[
+x\mapsto
+\int_Y (f^+)_x\,d\nu-\int_Y (f^-)_x\,d\nu.
+\]
+By Proposition 2.3.9, changing a function on a null set does not change its
+integrability or its integral. Hence
+\[
+I_f\in \mathcal{L}^1(X,\mathcal{A},\mu).
+\]
+
+Now using Tonelli's Theorem again for $f^+$ and $f^-$, and using Proposition
+2.3.9 to ignore the null set where $I_f$ was defined to be $0$, we get
+\[
+\int_X I_f\,d\mu
+=
+\int_X\left(\int_Y (f^+)_x\,d\nu\right)d\mu
+-
+\int_X\left(\int_Y (f^-)_x\,d\nu\right)d\mu
+\]
+\[
+=
+\int_{X\times Y} f^+\,d(\mu\times\nu)
+-
+\int_{X\times Y} f^-\,d(\mu\times\nu)
+=
+\int_{X\times Y} f\,d(\mu\times\nu).
+\]
+
+The same argument, with the roles of $X$ and $Y$ reversed, shows that
+$f^y$ is $\mu$-integrable for $\nu$-almost every $y$, that
+$J_f\in \mathcal{L}^1(Y,\mathcal{B},\nu)$, and that
+\[
+\int_Y J_f\,d\nu
+=
+\int_{X\times Y} f\,d(\mu\times\nu).
+\]
+Therefore
+\[
+\int_{X\times Y} f\,d(\mu\times\nu)
+=
+\int_X I_f\,d\mu
+=
+\int_Y J_f\,d\nu.
+\]
+\end{proof}
+
 \end{document}
