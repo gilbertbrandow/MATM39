@@ -1544,38 +1544,39 @@ is clear.
 \end{proof}
 
 \begin{proposition}[Proposition 3.3.3 Minkowski's Inequality]
-Let $(X,\mathcal{A},\mu)$ be a measure space, and let $1\le p\le \infty$.
-If $f,g\in L^p(X,\mathcal{A},\mu)$, then $f+g\in L^p(X,\mathcal{A},\mu)$ and
+Let $(X,\mathcal{A},\mu)$ be a measure space, and let $p$ satisfy
+$1\le p\le +\infty$. If $f$ and $g$ belong to
+$\mathcal{L}^p(X,\mathcal{A},\mu)$, then $f+g$ belongs to
+$\mathcal{L}^p(X,\mathcal{A},\mu)$ and
 \[
-\|f+g\|_p \le \|f\|_p+\|g\|_p.
+\|f+g\|_p\le \|f\|_p+\|g\|_p.
 \]
 \end{proposition}
 
 \begin{proof}
-First suppose $p=\infty$. Since
+First suppose that $p=+\infty$. Define
 \[
-|f|\le \|f\|_\infty,
+N_1=\{x\in X: |f(x)|>\|f\|_\infty\},
 \qquad
-|g|\le \|g\|_\infty
+N_2=\{x\in X: |g(x)|>\|g\|_\infty\}.
 \]
-almost everywhere, we have
+Then $N_1$ and $N_2$ are locally $\mu$-null, and
 \[
-|f+g|
-\le |f|+|g|
+|f(x)+g(x)|
+\le |f(x)|+|g(x)|
 \le \|f\|_\infty+\|g\|_\infty
 \]
-almost everywhere. Hence
+holds for each $x$ outside the locally $\mu$-null set $N_1\cup N_2$. Thus
+$f+g\in\mathcal{L}^\infty(X,\mathcal{A},\mu)$ and
 \[
-\|f+g\|_\infty
-\le
-\|f\|_\infty+\|g\|_\infty.
+\|f+g\|_\infty\le \|f\|_\infty+\|g\|_\infty.
 \]
 
-Next suppose $p=1$. Then
+Next suppose that $p=1$. Then the inequality
 \[
-|f+g|\le |f|+|g|,
+|f(x)+g(x)|\le |f(x)|+|g(x)|
 \]
-so
+holds at each $x\in X$, and so $f+g\in\mathcal{L}^1(X,\mathcal{A},\mu)$ and
 \[
 \|f+g\|_1
 =
@@ -1586,69 +1587,63 @@ so
 \|f\|_1+\|g\|_1.
 \]
 
-Now suppose $1<p<\infty$, and let $q$ satisfy
+Now consider the case where $1<p<+\infty$. Since
+\[
+|f+g|^p\le (2\max\{|f|,|g|\})^p\le 2^p(|f|^p+|g|^p),
+\]
+we have $f+g\in\mathcal{L}^p(X,\mathcal{A},\mu)$. Define $q$ by
 \[
 \frac1p+\frac1q=1.
 \]
-We have
+Since $p+q=pq$, it follows that
 \[
-|f+g|^p
-=
-|f+g|\,|f+g|^{p-1}
-\le
-(|f|+|g|)|f+g|^{p-1}.
+\left(|f+g|^{p-1}\right)^q=|f+g|^p
 \]
-Thus
+and hence that $|f+g|^{p-1}\in\mathcal{L}^q(X,\mathcal{A},\mu)$. Thus, using the triangle inequality
+\[
+\begin{aligned}
+    |f+g| &\le |f|+|g| \implies \\
+    |f+g||f+g|^{p-1} &\le (|f|+|g|)|f+g|^{p-1} \implies \\
+    |f+g|^p &\le (|f|+|g|)|f+g|^{p-1} \\
+\end{aligned}
+\]
+and applying Proposition 3.3.2, Hölder's Inequality, to the functions
+$f$ and $|f+g|^{p-1}$, and to the functions $g$ and $|f+g|^{p-1}$, we get
 \[
 \int |f+g|^p\,d\mu
 \le
-\int |f|\,|f+g|^{p-1}\,d\mu
+\int (|f|+|g|)|f+g|^{p-1}\,d\mu
+\]
+\[
+=
+\int |f||f+g|^{p-1}\,d\mu
 +
-\int |g|\,|f+g|^{p-1}\,d\mu.
+\int |g||f+g|^{p-1}\,d\mu
 \]
-By Proposition 3.3.2, Hölder's Inequality,
 \[
-\int |f|\,|f+g|^{p-1}\,d\mu
 \le
-\|f\|_p\,\big\||f+g|^{p-1}\big\|_q,
+\|f\|_p\left\||f+g|^{p-1}\right\|_q
++
+\|g\|_p\left\||f+g|^{p-1}\right\|_q
 \]
-and similarly
 \[
-\int |g|\,|f+g|^{p-1}\,d\mu
-\le
-\|g\|_p\,\big\||f+g|^{p-1}\big\|_q.
-\]
-Since $q(p-1)=p$, we have
-\[
-\big\||f+g|^{p-1}\big\|_q
 =
-\left(\int |f+g|^{(p-1)q}\,d\mu\right)^{1/q}
-=
-\left(\int |f+g|^p\,d\mu\right)^{1/q}.
-\]
-Therefore
-\[
-\int |f+g|^p\,d\mu
-\le
 (\|f\|_p+\|g\|_p)
 \left(\int |f+g|^p\,d\mu\right)^{1/q}.
 \]
-If $\int |f+g|^p\,d\mu=0$, the result is clear. Otherwise, divide by
+If
 \[
-\left(\int |f+g|^p\,d\mu\right)^{1/q}
+\int |f+g|^p\,d\mu\neq 0,
 \]
-to obtain
+we can divide by
 \[
-\left(\int |f+g|^p\,d\mu\right)^{1/p}
-\le
-\|f\|_p+\|g\|_p.
+\left(\int |f+g|^p\,d\mu\right)^{1/q},
 \]
-Thus
+obtaining
 \[
-\|f+g\|_p
-\le
-\|f\|_p+\|g\|_p.
+\|f+g\|_p\le \|f\|_p+\|g\|_p.
 \]
+Since this inequality is clear if $\int |f+g|^p\,d\mu=0$, the proof is complete.
 \end{proof}
 
 \begin{theorem}[Completeness of $L^p$]
