@@ -365,29 +365,10 @@ Let $f : X \to [0,\infty]$ be measurable. The integral of $f$ is defined by
 where $\mathcal{S}_+$ denotes the set of nonnegative simple measurable functions.
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}[Proposition 2.1.8]
 Every nonnegative measurable function $f : X \to [0,\infty]$ is the pointwise
 limit of an increasing sequence of nonnegative simple measurable functions.
 \end{proposition}
-
-\begin{proof}[Reference]
-This is Proposition 2.1.8 in Cohn. It guarantees that nonnegative measurable
-functions can be approximated from below by simple functions.
-\end{proof}
-
-\begin{proposition}
-If $f_n \in \mathcal{S}_+$, $f_n \uparrow f$, and $f$ is nonnegative measurable,
-then
-\[
-\int f\,d\mu = \lim_{n\to\infty} \int f_n\,d\mu.
-\]
-\end{proposition}
-
-\begin{proof}[Reference]
-This is Proposition 2.3.3 in Cohn. It shows that the supremum definition agrees
-with taking limits along increasing simple approximations. Proposition 2.3.2 is
-the corresponding result when the limiting function is itself simple.
-\end{proof}
 
 \begin{remark}
 Thus the integral is first defined directly for nonnegative simple functions.
@@ -470,7 +451,7 @@ Then $g_n\in\mathcal{S}_+$ and $g_n\le f_n$. Hence
 \[
 \int g_n\,d\mu \le \int f_n\,d\mu.
 \]
-By Proposition 1.2.5,
+By Proposition 1.2.5 and the continuity of a measure from below, we may "move the limit inside" for an increasing sequence of sets $A(n,i)$
 \[
 \lim_{n\to\infty}\int g_n\,d\mu
 =
@@ -1065,38 +1046,33 @@ almost everywhere, then $f_n \to f$ in measure.
 \end{proposition}
 
 \begin{proof}
-We must show that for every $\varepsilon>0$,
-\[
-\mu\big(\{x\in X: |f_n(x)-f(x)|>\varepsilon\}\big)\to 0.
-\]
 Fix $\varepsilon>0$ and define
 \[
-A_n:=\{x\in X: |f_n(x)-f(x)|>\varepsilon\},
-\qquad
-B_n:=\bigcup_{k=n}^\infty A_k.
+A_n^\varepsilon:=\{x\in X: |f_n(x)-f(x)|>\varepsilon\}.
 \]
-Then $\{B_n\}$ is a decreasing sequence of measurable sets. Moreover,
-\[
-\bigcap_{n=1}^\infty B_n
-\subset
-\{x\in X : f_n(x) \text{ does not converge to } f(x)\}.
-\]
-Since $f_n\to f$ almost everywhere, this intersection has measure zero.
 
-Because $\mu(X)<\infty$ and $B_1\subset X$, we have $\mu(B_1)<\infty$. Hence,
-by continuity from above of measures, Proposition 1.2.5,
+Since $f_n\to f$ almost everywhere, we have $\mathbf{1}_{A_n^\varepsilon}(x)\to 0$ for almost every $x\in X$. Indeed, if $f_n(x)\to f(x)$, then eventually
+$|f_n(x)-f(x)|\le \varepsilon$, so eventually
+$\mathbf{1}_{A_n^\varepsilon}(x)=0$.
+
+Also, $0\le \mathbf{1}_{A_n^\varepsilon}\le 1,$
+and since $\mu(X)<\infty$, the function $1$ is integrable:
 \[
-\mu(B_n)\to \mu\!\left(\bigcap_{n=1}^\infty B_n\right)=0.
+\int 1\,d\mu=\mu(X)<\infty.
 \]
-Since $A_n\subset B_n$, we get
+Thus, by the Dominated Convergence Theorem,
 \[
-0\le \mu(A_n)\le \mu(B_n)\to 0.
+\lim_{n\to\infty}\mu(A_n^\varepsilon)
+=
+\lim_{n\to\infty}\int \mathbf{1}_{A_n^\varepsilon}\,d\mu
+=
+\int \lim_{n\to\infty}\mathbf{1}_{A_n^\varepsilon}\,d\mu
+=
+\int 0\,d\mu
+=
+0.
 \]
-Therefore,
-\[
-\mu\big(\{x\in X: |f_n(x)-f(x)|>\varepsilon\}\big)\to 0,
-\]
-so $f_n\to f$ in measure.
+Therefore $f_n\to f$ in measure.
 \end{proof}
 
 \begin{proposition}
