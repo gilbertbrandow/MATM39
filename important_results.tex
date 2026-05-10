@@ -1620,6 +1620,97 @@ obtaining
 Since this inequality is clear if $\int |f+g|^p\,d\mu=0$, the proof is complete.
 \end{proof}
 
+\begin{proposition}
+Let \(V\) be a normed linear space. Then \(V\) is complete if and only if
+every absolutely convergent series in \(V\) is convergent.
+\end{proposition}
+
+\begin{proof}
+First suppose that \(V\) is complete. Let
+\[
+\sum_{k=1}^{\infty} v_k
+\]
+be an absolutely convergent series in \(V\), meaning
+\[
+\sum_{k=1}^{\infty} \|v_k\|<\infty.
+\]
+Let
+\[
+s_n:=\sum_{k=1}^{n}v_k
+\qquad\text{and}\qquad
+t_n:=\sum_{k=1}^{n}\|v_k\|.
+\]
+We show that \((s_n)\) is Cauchy. If \(m<n\), then
+\[
+\|s_n-s_m\|
+=
+\left\|\sum_{k=m+1}^{n}v_k\right\|
+\leq
+\sum_{k=m+1}^{n}\|v_k\|
+=
+t_n-t_m.
+\]
+Since \(\sum_{k=1}^{\infty}\|v_k\|\) converges, the sequence \((t_n)\) is
+Cauchy. Hence \((s_n)\) is Cauchy. Since \(V\) is complete, \((s_n)\)
+converges in \(V\). Therefore the series \(\sum_{k=1}^{\infty}v_k\)
+converges.
+
+Conversely, suppose that every absolutely convergent series in \(V\) is
+convergent. Let \((u_n)\) be a Cauchy sequence in \(V\). Since \((u_n)\) is
+Cauchy, we can choose a subsequence \((u_{n_k})\) such that
+\[
+\|u_{n_{k+1}}-u_{n_k}\|\leq 2^{-k}
+\]
+for every \(k\).
+
+Define a series \(\sum_{k=1}^{\infty}v_k\) by
+\[
+v_1:=u_{n_1},
+\qquad
+v_{k+1}:=u_{n_{k+1}}-u_{n_k}
+\quad \text{for } k\geq 1.
+\]
+Then
+\[
+\sum_{k=1}^{\infty}\|v_k\|
+\leq
+\|u_{n_1}\|+\sum_{k=1}^{\infty}2^{-k}
+<\infty.
+\]
+Thus \(\sum_{k=1}^{\infty}v_k\) is absolutely convergent, and by assumption it
+converges in \(V\).
+
+Its partial sums telescope:
+\[
+\sum_{j=1}^{k+1}v_j
+=
+u_{n_{k+1}}.
+\]
+Hence the subsequence \((u_{n_k})\) converges to some \(u\in V\).
+
+It remains to show that the original sequence \((u_n)\) converges to \(u\).
+Since \((u_n)\) is Cauchy, for every \(\varepsilon>0\) there exists \(N\) such
+that
+\[
+\|u_n-u_m\|<\frac{\varepsilon}{2}
+\]
+whenever \(n,m\geq N\). Since \(u_{n_k}\to u\), choose \(k\) such that
+\(n_k\geq N\) and
+\[
+\|u_{n_k}-u\|<\frac{\varepsilon}{2}.
+\]
+Then for \(n\geq N\),
+\[
+\|u_n-u\|
+\leq
+\|u_n-u_{n_k}\|+\|u_{n_k}-u\|
+<
+\varepsilon.
+\]
+Therefore \(u_n\to u\). Hence every Cauchy sequence in \(V\) converges, so
+\(V\) is complete.
+\end{proof}
+
 \begin{theorem}[Completeness of $L^p$]
 Let $(X,\mathcal{A},\mu)$ be a measure space, and let $1\le p\le \infty$.
 Then $L^p(X,\mathcal{A},\mu)$ is complete under the norm $\|\cdot\|_p$.
