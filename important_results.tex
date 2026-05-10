@@ -2021,26 +2021,102 @@ y\mapsto \int_X f^y\,d\mu
 \]
 is measurable.
 
-Applying the simple-function case to $s_n$ gives
+Applying the simple-function case to \(s_n\), we have for every \(n\),
 \[
 \int_{X\times Y} s_n\,d(\mu\times\nu)
 =
 \int_X\left(\int_Y (s_n)_x\,d\nu\right)d\mu.
 \]
-Letting $n\to\infty$ and applying the Monotone Convergence Theorem on both
-sides yields
+
+We now pass to the limit on both sides.
+
+First, since \(s_n\uparrow f\) on \(X\times Y\), the Monotone Convergence
+Theorem applied on the product measure space
+\[
+(X\times Y,\mathcal A\times\mathcal B,\mu\times\nu)
+\]
+gives
+\[
+\lim_{n\to\infty}
+\int_{X\times Y} s_n\,d(\mu\times\nu)
+=
+\int_{X\times Y} f\,d(\mu\times\nu).
+\]
+
+Now consider the right-hand side. Define
+\[
+F_n(x):=\int_Y (s_n)_x\,d\nu.
+\]
+For each fixed \(x\in X\), we have
+\[
+(s_n)_x(y)=s_n(x,y)\uparrow f(x,y)=f_x(y).
+\]
+Hence, by the Monotone Convergence Theorem on \((Y,\mathcal B,\nu)\),
+\[
+F_n(x)
+=
+\int_Y (s_n)_x\,d\nu
+\uparrow
+\int_Y f_x\,d\nu.
+\]
+Define
+\[
+F(x):=\int_Y f_x\,d\nu.
+\]
+Thus
+\[
+F_n\uparrow F.
+\]
+Since each \(F_n\) is measurable, \(F\) is measurable as the pointwise limit of
+measurable functions.
+
+Applying the Monotone Convergence Theorem on \((X,\mathcal A,\mu)\), we get
+\[
+\lim_{n\to\infty}
+\int_X F_n\,d\mu
+=
+\int_X F\,d\mu.
+\]
+That is,
+\[
+\lim_{n\to\infty}
+\int_X\left(\int_Y (s_n)_x\,d\nu\right)d\mu
+=
+\int_X\left(\int_Y f_x\,d\nu\right)d\mu.
+\]
+
+Therefore, taking limits in
+\[
+\int_{X\times Y} s_n\,d(\mu\times\nu)
+=
+\int_X\left(\int_Y (s_n)_x\,d\nu\right)d\mu
+\]
+gives
 \[
 \int_{X\times Y} f\,d(\mu\times\nu)
 =
 \int_X\left(\int_Y f_x\,d\nu\right)d\mu.
 \]
-The same argument gives
+
+The same argument with
+\[
+G_n(y):=\int_X (s_n)^y\,d\mu
+\]
+gives
 \[
 \int_{X\times Y} f\,d(\mu\times\nu)
 =
 \int_Y\left(\int_X f^y\,d\mu\right)d\nu.
 \]
-Hence the theorem follows.
+
+Hence
+\[
+\int_{X\times Y} f\,d(\mu\times\nu)
+=
+\int_X\left(\int_Y f_x\,d\nu\right)d\mu
+=
+\int_Y\left(\int_X f^y\,d\mu\right)d\nu.
+\]
 \end{proof}
 
 \begin{theorem}[Fubini's Theorem]
