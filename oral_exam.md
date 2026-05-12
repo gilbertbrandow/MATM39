@@ -2,14 +2,17 @@
 
 ## Chapter 1 — Measure Theory Foundations
 
-**Sigma algebras**
+### Sigma algebras
+
 - Definition and Corollary 1.1.3
 - Construction of the Borel sigma algebra
 
-**Measures**
+### Measures
+
 - Definition and Proposition 1.2.5
 
-**Outer measures and Lebesgue measure**
+### Outer measures and Lebesgue measure
+
 - Understand key definitions
 - Understand why outer measures are needed for the construction of Lebesgue measure
 - Understand on a shallow level Theorem 1.3.6 and how it leads to the Lebesgue sigma algebra
@@ -30,7 +33,7 @@
 ## Chapter 3 — $L^p$ Spaces
 
 - Know all results in 3.1 and be able to prove some of them
-- **Proof** of Hölder's and Minkowski's inequalities
+- Proof of Hölder's and Minkowski's inequalities
 - Explain the construction of $L^p$
 - Completeness of $L^p$ (with proof) — why is it a Banach space?
 
